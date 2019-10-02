@@ -23,10 +23,8 @@ CREATE TABLE players.games(
     game_id BIGSERIAL PRIMARY KEY,
     a_id INT NOT NULL,
     b_id INT NOT NULL,
-    c_id INT,  -- for doubles and triples
+    c_id INT,  -- for doubles
     d_id INT,
-    e_id INT,
-    f_id INT,
     timestamp TIMESTAMP DEFAULT NOW(),
     result INT NOT NULL DEFAULT 0,  -- 0 means a_id wins, 1 means b_id wins, 2 means draw
     notes VARCHAR(200),
@@ -34,9 +32,7 @@ CREATE TABLE players.games(
     FOREIGN KEY (a_id) REFERENCES players.users(user_id),
     FOREIGN KEY (b_id) REFERENCES players.users(user_id),
     FOREIGN KEY (c_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (d_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (e_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (f_id) REFERENCES players.users(user_id)
+    FOREIGN KEY (d_id) REFERENCES players.users(user_id)
 );
 
 -- History of ratings -

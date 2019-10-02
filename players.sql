@@ -28,7 +28,7 @@ CREATE TABLE players.games(
     timestamp TIMESTAMP DEFAULT NOW(),
     result INT NOT NULL DEFAULT 0,  -- 0 means a_id wins, 1 means b_id wins, 2 means draw
     notes VARCHAR(200),
-    tournament_game BOOLEAN NOT NULL DEFAULT FALSE,
+    tournament_game BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (a_id) REFERENCES players.users(user_id),
     FOREIGN KEY (b_id) REFERENCES players.users(user_id),
     FOREIGN KEY (c_id) REFERENCES players.users(user_id),

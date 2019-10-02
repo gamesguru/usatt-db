@@ -1,4 +1,4 @@
 DROP TABLE players.games;
 DROP TABLE players.ratings;
-DROP TABLE players.players;
+DROP TABLE players.users;
 -- DROP SCHEMA players CASCADE;

@@ -2,23 +2,23 @@
 -- Main users table
 CREATE TABLE players.users(
     user_id SERIAL PRIMARY KEY,
-    username CITEXT NOT NULL,
-    passwd VARCHAR(300) NOT NULL,
+    username CITEXT NOT NULL,  -- Should be user's Ford CDSID
+    passwd VARCHAR(300),
     unverified_email CITEXT,
     email CITEXT,
     email_token_activate VARCHAR(200),
     email_token_pw_reset VARCHAR(200),
-    cdsid VARCHAR(40),
-    name VARCHAR(90),
-    rating float,
+    name VARCHAR(90),  -- First Last
+    rating float DEFAULT 1200,
     gender VARCHAR(20),
     height SMALLINT,
-    grip VARCHAR(20),
+    grip VARCHAR(20) DEFAULT 'SHAKE_HAND',
     playing_style VARCHAR(200),
     headline VARCHAR(200),
     UNIQUE(username),
     UNIQUE(email),
-    UNIQUE(unverified_email)
+    UNIQUE(unverified_email),
+    UNIQUE(name)
 );
 
 -- Main games table
@@ -47,6 +47,7 @@ CREATE TABLE players.ratings(
     user_id INT NOT NULL,
     game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
     rating float NOT NULL,
+    timestamp TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
 );

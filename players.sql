@@ -24,17 +24,19 @@ CREATE TABLE players.users(
 -- Main games table
 CREATE TABLE players.games(
     game_id BIGSERIAL PRIMARY KEY,
+    reporter_id INT NOT NULL,
     a_id INT NOT NULL,
     b_id INT NOT NULL,
     c_id INT,  -- for doubles
     d_id INT,
     points INT DEFAULT 21,  -- Can also be 11
     timestamp TIMESTAMP DEFAULT NOW(),
-    result INT DEFAULT 0,  -- 0 means a_id wins, 1 means b_id wins, 2 means draw
+    result INT DEFAULT 0,  -- 0 means a_id wins, 1 means draw
     a_score INT DEFAULT 21,  -- Final score of winner
     b_score INT,  -- Final score of loser
     notes VARCHAR(200),
-    -- tournament_id INT,
+    tournament_game BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
     FOREIGN KEY (a_id) REFERENCES players.users(user_id),
     FOREIGN KEY (b_id) REFERENCES players.users(user_id),
     FOREIGN KEY (c_id) REFERENCES players.users(user_id),

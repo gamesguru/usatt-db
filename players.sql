@@ -21,38 +21,52 @@ CREATE TABLE players.users(
     UNIQUE(name)
 );
 
--- Main games table
-CREATE TABLE players.games(
+-- Main games tables
+CREATE TABLE players.singles_games(
     game_id BIGSERIAL PRIMARY KEY,
     reporter_id INT NOT NULL,
-    a_id INT NOT NULL,
-    b_id INT NOT NULL,
-    c_id INT,  -- for doubles
-    d_id INT,
+    player1_id INT NOT NULL,  -- Winner
+    player2_id INT NOT NULL,  -- Loser
     points INT DEFAULT 21,  -- Can also be 11
+    player1_score INT DEFAULT 21,  -- Final score of winner
+    player2_score INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
-    result INT DEFAULT 0,  -- 0 means a_id wins, 1 means draw
-    a_score INT DEFAULT 21,  -- Final score of winner
-    b_score INT,  -- Final score of loser
     notes VARCHAR(200),
     tournament_game BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (a_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (b_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (c_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (d_id) REFERENCES players.users(user_id)
+    FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (player2_id) REFERENCES players.users(user_id)
+);
+CREATE TABLE players.doubles_games(
+    game_id BIGSERIAL PRIMARY KEY,
+    reporter_id INT NOT NULL,
+    player1_id INT NOT NULL,  -- Team 1 (winner)
+    player2_id INT NOT NULL,  -- Team 1 (winner)
+    player3_id INT NOT NULL,  -- Team 2
+    player4_id INT NOT NULL,  -- Team 2
+    points INT DEFAULT 21,  -- Can also be 11
+    team1_score INT DEFAULT 21,  -- Final score of winner
+    team2_score INT,  -- Final score of loser
+    timestamp TIMESTAMP DEFAULT NOW(),
+    notes VARCHAR(200),
+    tournament_game BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (player2_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (player3_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (player4_id) REFERENCES players.users(user_id)
 );
 
 -- History of ratings
-CREATE TABLE players.ratings(
-    rating_id BIGSERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
-    rating float NOT NULL,
-    timestamp TIMESTAMP DEFAULT NOW(),
-    FOREIGN KEY (user_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (game_id) REFERENCES players.games(game_id)
-);
+-- CREATE TABLE players.ratings(
+--     rating_id BIGSERIAL PRIMARY KEY,
+--     user_id INT NOT NULL,
+--     game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
+--     rating float NOT NULL,
+--     timestamp TIMESTAMP DEFAULT NOW(),
+--     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
+--     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
+-- );
 
 -- TODO: Tournament table
 -- CREATE TABLE players.tournaments(

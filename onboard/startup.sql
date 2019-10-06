@@ -1,5 +1,7 @@
 -- Run from parent directory, e.g. `../`
 
-\i players.sql
-\i functions.sql
-\i import.sql
+\! echo '\nBEGIN: [startup.sql]';
+
+\i ./players.sql
+-- \i ./onboard/functions.sql
+\i ./onboard/__import.sql

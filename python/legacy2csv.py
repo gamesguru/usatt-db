@@ -55,7 +55,7 @@ with open(singles_file.replace('.txt', '.csv'), 'w+') as f:
         f.write(f'{admin_id},{winner},{loser}\n')
 
 with open(doubles_file.replace('.txt', '.csv'), 'w+') as f:
-    f.write('ReporterID,Player1_ID,Player2_ID,Points,Team1_Score,Team2_Score,Notes,TOURNAMENT_GAME\n')
+    f.write('ReporterID,Player1_ID,Player2_ID,Player3_ID,Player4_ID,Points,Team1_Score,Team2_Score,Notes,TOURNAMENT_GAME\n')
     for l in doubles_lines:
         winner1_username = l.split()[0].split('&')[0]
         winner2_username = l.split()[0].split('&')[1]

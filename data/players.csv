@@ -1,27 +1,32 @@
-Name,Username
-Shane Jaroch,sjaroch
-Shantanu Deshmukh,sdeshmu2
-Amrinder Grewal,agrewal6
-Aseem Ahir,aahir
-Avinash Chintareddy,achintar
-Christopher Hooper,choope20
-Devi Vasamsetti,dvasamse
-Grant Peterson,gpeter86
-Gregory Nurushev,gnurushe
-Haitham Seada,hseada
-Hari Prasad Miriyam,hmiriyam
-Hyongju Park,hpark3
-Khaled Kesmia,kkesmia
-Md Sha Al Mamun,mmamun
-Pramod Mathai,pmathai
-Raja Ramachandran,rramac21
-Rohan Arora,rarora13
-Yuhai Hu,yhu60
-Taj Singh,tsingh6
-Adam Dejans,adejans
-Vadim Bagdass,vbagdass
-Prithvi Haran,pharan
-Haochen Ji,hji9
-Joshua Lyon,jlyon11
-Blake Icabone,bicabone
-Ron Dollete,rdollete
+Name,Username,Email,Start Rating,Gender,Grip
+Shane Jaroch,sjaroch,sjaroch@ford.com,1200,Male,SHAKE_HAND
+Raja Ramachandran,rramac21,rramac21@ford.com,1300,Male,SHAKE_HAND
+Yuhai Hu,yhu60,yhu60@ford.com,1600,Male,PEN_HOLE
+Haitham Seada,hseada,hseada@ford.com,1400,Male,SHAKE_HAND
+Pramod Mathai,pmathai,pmathai@ford.com,1350,Male,SHAKE_HAND
+Christopher Hooper,choope20,choope20@ford.com,1300,Male,SHAKE_HAND
+Tharun,Tharun,,1300,Male,SHAKE_HAND
+Rohan Arora,rarora13,rarora13@ford.com,1300,Male,SHAKE_HAND
+Vadim Bagdass,vbagdass,vbagdass@ford.com,1250,Male,SHAKE_HAND
+Ron Dollete,rdollete,rdollete@ford.com,1250,Male,SHAKE_HAND
+Shantanu Deshmukh,sdeshmu2,sdeshmu2@ford.com,1200,Male,SHAKE_HAND
+Amrinder Grewal,agrewal6,agrewal6@ford.com,1200,Male,SHAKE_HAND
+Aseem Ahir,aahir,aahir@ford.com,1200,Male,SHAKE_HAND
+Avinash Chintareddy,achintar,achintar@ford.com,1200,Male,SHAKE_HAND
+Devi Vasamsetti,dvasamse,dvasamse@ford.com,1200,Male,SHAKE_HAND
+Grant Peterson,gpeter86,gpeter86@ford.com,1200,Male,SHAKE_HAND
+Gregory Nurushev,gnurushe,gnurushe@ford.com,1200,Male,SHAKE_HAND
+Hari Prasad Miriyam,hmiriyam,hmiriyam@ford.com,1200,Male,SHAKE_HAND
+Hyongju Park,hpark3,hpark3@ford.com,1200,Male,SHAKE_HAND
+Khaled Kesmia,kkesmia,kkesmia@ford.com,1200,Male,SHAKE_HAND
+Md Sha Al Mamun,mmamun,mmamun@ford.com,1200,Male,SHAKE_HAND
+Taj Singh,tsingh6,tsingh6@ford.com,1200,Male,SHAKE_HAND
+Adam Dejans,adejans,adejans@ford.com,1200,Male,PEN_HOLE
+Prithvi Haran,pharan,pharan@ford.com,1200,Male,SHAKE_HAND
+Haochen Ji,hji9,hji9@ford.com,1200,Male,SHAKE_HAND
+Joshua Lyon,jlyon11,jlyon11@ford.com,1200,Male,SHAKE_HAND
+Blake Icabone,bicabone,bicabone@ford.com,1200,Male,SHAKE_HAND
+Bo,Bo,,1200,Male,SHAKE_HAND
+Avi,Avi,,1200,Male,SHAKE_HAND
+NewGuy,NewGuy,,1200,Male,SHAKE_HAND
+Anil,Anil,,1200,Male,SHAKE_HAND

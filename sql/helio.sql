@@ -11,4 +11,4 @@
 
 
 -- Run main startup script
-\i ./onboard/startup.sql
+\i ./sql/startup.sql

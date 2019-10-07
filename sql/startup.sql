@@ -4,4 +4,4 @@
 
 \i ./players.sql
 -- \i ./onboard/functions.sql
-\i ./onboard/__import.sql
+\i ./sql/__import.sql

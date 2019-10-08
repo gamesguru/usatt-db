@@ -3,7 +3,7 @@
 
 -- Players --
 \! echo '[Players]';
-\copy players.users TO 'players.csv' WITH (FORMAT csv, HEADER);
+\copy players.users TO './data/players.csv' WITH (FORMAT csv, HEADER);
 
 -- Singles --
 \! echo '[Singles]';

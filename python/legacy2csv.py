@@ -42,8 +42,8 @@ with open(doubles_file, 'r') as f:
 
 
 # Writes the modified data to *.csv files, which are SQL ready
-with open(singles_file.replace('.txt', '.csv'), 'w+') as f:
-    f.write('ReporterID,Player1_ID,Player2_ID,Points,Team1_Score,Team2_Score,Notes,TOURNAMENT_GAME\n')
+with open('data/scores_singles.csv', 'w+') as f:
+    f.write('reporter_id,player1_id,player2_id,points,player1_score,player2_score,timestamp,notes,tournament_game\n')
     for l in singles_lines:
         winner_username = l.split()[0]
         loser_username = l.split()[1]
@@ -51,11 +51,10 @@ with open(singles_file.replace('.txt', '.csv'), 'w+') as f:
         winner = players[winner_username]['user_id']
         loser = players[loser_username]['user_id']
 
-        # f.write(f'{admin_id,{winner_username},{loser_username}\n')
-        f.write(f'{admin_id},{winner},{loser}\n')
+        f.write(f'{admin_id},{winner},{loser},21,21,,,,\n')
 
-with open(doubles_file.replace('.txt', '.csv'), 'w+') as f:
-    f.write('ReporterID,Player1_ID,Player2_ID,Player3_ID,Player4_ID,Points,Team1_Score,Team2_Score,Notes,TOURNAMENT_GAME\n')
+with open('data/scores_doubles.csv', 'w+') as f:
+    f.write('reporter_id,player1_id,player2_id,player3_id,player4_id,points,team1_score,team2_score,timestamp,notes,tournament_game\n')
     for l in doubles_lines:
         winner1_username = l.split()[0].split('&')[0]
         winner2_username = l.split()[0].split('&')[1]
@@ -67,5 +66,4 @@ with open(doubles_file.replace('.txt', '.csv'), 'w+') as f:
         loser1 = players[loser1_username]['user_id']
         loser2 = players[loser2_username]['user_id']
 
-        # f.write(f'{admin_id},{winner1_username},{winner2_username},{loser1_username},{loser2_username}\n')
-        f.write(f'{admin_id},{winner1},{winner2},{loser1},{loser2}\n')
+        f.write(f'{admin_id},{winner1},{winner2},{loser1},{loser2},21,21,,,,\n')

@@ -3,12 +3,12 @@
 
 -- Players --
 \! echo '[Players]';
-\copy players.users TO './data/players.csv' WITH (FORMAT csv, HEADER);
+\copy players.users (username, passwd, unverified_email, email, name, starting_rating, gender, height, grip, playing_style, headline) TO './data/players.csv' WITH (FORMAT csv, HEADER);
 
 -- Singles --
 \! echo '[Singles]';
-\copy players.singles_games TO './data/scores_singles.csv' WITH (FORMAT csv, HEADER);
+\copy players.singles_games (reporter_id, player1_id, player2_id, points, player1_score, player2_score, timestamp, notes, tournament_game) TO './data/scores_singles.csv' WITH (FORMAT csv, HEADER);
 
 -- Doubles --
 \! echo '[Doubles]';
-\copy players.doubles_games TO './data/scores_doubles.csv' WITH (FORMAT csv, HEADER);
+\copy players.doubles_games (reporter_id, player1_id, player2_id, player3_id, player4_id, points, team1_score, team2_score, timestamp, notes, tournament_game) TO './data/scores_doubles.csv' WITH (FORMAT csv, HEADER);

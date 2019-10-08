@@ -7,8 +7,8 @@
 
 -- Singles --
 \! echo '[Singles]';
-\copy players.singles_games (reporter_id, player1_id, player2_id) FROM ./data/scores_singles.csv WITH (FORMAT csv, HEADER);
+\copy players.singles_games FROM ./data/scores_singles.csv WITH (FORMAT csv, HEADER);
 
 -- Doubles --
 \! echo '[Doubles]';
-\copy players.doubles_games (reporter_id, player1_id, player2_id, player3_id, player4_id) FROM ./data/scores_doubles.csv WITH (FORMAT csv, HEADER);
+\copy players.doubles_games FROM ./data/scores_doubles.csv WITH (FORMAT csv, HEADER);

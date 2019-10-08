@@ -11,4 +11,4 @@
 
 -- Doubles --
 \! echo '[Doubles]';
-\copy players.singles_games TO './data/scores_doubles.csv' WITH (FORMAT csv, HEADER);
+\copy players.doubles_games TO './data/scores_doubles.csv' WITH (FORMAT csv, HEADER);

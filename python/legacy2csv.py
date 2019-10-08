@@ -20,22 +20,18 @@ with open('./data/players.csv', 'r') as f:
     for line in f.readlines():
         player_lines.append(line.rstrip())
 for i, p in enumerate(player_lines[1:]):
-    username = p.split(',')[1]
+    username = p.split(',')[0]  # Volatile
     players[username] = {'user_id': i + 1}
 
 
 # Gets scores_*.txt directory and files
-score_dir = '../legacy'
-singles_file = f'{score_dir}/scores_singles.txt'
-doubles_file = f'{score_dir}/scores_doubles.txt'
-
 singles_lines = []
-with open(singles_file, 'r') as f:
+with open('../legacy/scores_singles.txt', 'r') as f:
     for line in f.readlines():
         if not line.startswith('#') and len(line) > 3:
             singles_lines.append(line.rstrip())
 doubles_lines = []
-with open(doubles_file, 'r') as f:
+with open('../legacy/scores_doubles.txt', 'r') as f:
     for line in f.readlines():
         if not line.startswith('#') and len(line) > 3:
             doubles_lines.append(line.rstrip())

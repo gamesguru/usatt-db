@@ -25,7 +25,7 @@ for i, p in enumerate(player_lines[1:]):
 
 
 # Gets scores_*.txt directory and files
-score_dir = sys.argv[1]
+score_dir = '../legacy'
 singles_file = f'{score_dir}/scores_singles.txt'
 doubles_file = f'{score_dir}/scores_doubles.txt'
 

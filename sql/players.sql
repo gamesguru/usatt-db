@@ -28,8 +28,8 @@ CREATE TABLE players.singles_games(
     player1_id INT NOT NULL,  -- Winner
     player2_id INT NOT NULL,  -- Loser
     points INT DEFAULT 21,  -- Can also be 11
-    player1_score INT DEFAULT 21,  -- Final score of winner
-    player2_score INT,  -- Final score of loser
+    team1_score INT DEFAULT 21,  -- Final score of winner
+    team2_score INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
     tournament_game BOOLEAN DEFAULT FALSE,

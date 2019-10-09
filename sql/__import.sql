@@ -7,7 +7,7 @@
 
 -- Singles --
 \! echo '[Singles]';
-\copy players.singles_games (reporter_id, player1_id, player2_id, points, player1_score, player2_score, timestamp, notes, tournament_game) FROM ./data/scores_singles.csv WITH (FORMAT csv, HEADER);
+\copy players.singles_games (reporter_id, player1_id, player2_id, points, team1_score, team2_score, timestamp, notes, tournament_game) FROM ./data/scores_singles.csv WITH (FORMAT csv, HEADER);
 
 -- Doubles --
 \! echo '[Doubles]';

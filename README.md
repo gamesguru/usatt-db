@@ -20,7 +20,7 @@ This will run the `players.sql` script among others, and create the main tables 
 
 ## Other remarks
 
-- To drop all data, run `\i sql/drop.sql`
+- To drop all data, run `\i sql/drop.sql`.  To do roughly the opposite, run `\i sql/startup.sql`.
 
 - To export and import the SQL image to and from csv files, use the `\i sql/__import.sql` && `\i sql/__export.sql` commands.
 

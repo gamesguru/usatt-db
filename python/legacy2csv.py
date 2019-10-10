@@ -6,7 +6,9 @@ Created on Sun Oct  6 21:59:53 2019
 @author: shane
 """
 
-import sys
+# NOTE:
+# Run this script from the root of this directory.  Clone the `usatt-legacy` repo next to this one, and rename the folder to `legacy`
+###
 
 
 # My ID, used as reporter_id

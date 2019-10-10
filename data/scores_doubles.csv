@@ -1,4 +1,4 @@
-reporter_id,player1_id,player2_id,player3_id,player4_id,points,team1_score,team2_score,timestamp,notes,tournament_game
+reporter_id,player1_id,player2_id,player3_id,player4_id,points,score1,score2,timestamp,notes,tournament_game
 1,18,1,6,9,21,21,,,,
 1,18,1,6,9,21,21,,,,
 1,6,15,18,1,21,21,,,,

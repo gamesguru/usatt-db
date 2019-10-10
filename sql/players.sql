@@ -21,6 +21,13 @@ CREATE TABLE players.users(
     UNIQUE(name)
 );
 
+-- Tournament table
+CREATE TABLE players.tournaments(
+    tournament_id SERIAL PRIMARY KEY,
+    entrants INT[],
+    ranking INT[]
+);
+
 -- Main games tables
 CREATE TABLE players.singles_games(
     game_id BIGSERIAL PRIMARY KEY,
@@ -28,14 +35,16 @@ CREATE TABLE players.singles_games(
     player1_id INT NOT NULL,  -- Winner
     player2_id INT NOT NULL,  -- Loser
     points INT DEFAULT 21,  -- Can also be 11
-    team1_score INT DEFAULT 21,  -- Final score of winner
-    team2_score INT,  -- Final score of loser
+    score1 INT DEFAULT 21,  -- Final score of winner
+    score2 INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
     tournament_game BOOLEAN DEFAULT FALSE,
+    tournament_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player2_id) REFERENCES players.users(user_id)
+    FOREIGN KEY (player2_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id)
 );
 CREATE TABLE players.doubles_games(
     game_id BIGSERIAL PRIMARY KEY,
@@ -45,16 +54,18 @@ CREATE TABLE players.doubles_games(
     player3_id INT NOT NULL,  -- Team 2
     player4_id INT NOT NULL,  -- Team 2
     points INT DEFAULT 21,  -- Can also be 11
-    team1_score INT DEFAULT 21,  -- Final score of winner
-    team2_score INT,  -- Final score of loser
+    score1 INT DEFAULT 21,  -- Final score of winner
+    score2 INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
     tournament_game BOOLEAN DEFAULT FALSE,
+    tournament_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id),
     FOREIGN KEY (player3_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player4_id) REFERENCES players.users(user_id)
+    FOREIGN KEY (player4_id) REFERENCES players.users(user_id),
+    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id)
 );
 
 -- History of ratings
@@ -66,10 +77,4 @@ CREATE TABLE players.doubles_games(
 --     timestamp TIMESTAMP DEFAULT NOW(),
 --     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
 --     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
--- );
-
--- TODO: Tournament table
--- CREATE TABLE players.tournaments(
---     tournament_id SERIAL PRIMARY KEY,
-
 -- );

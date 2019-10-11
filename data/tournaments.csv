@@ -1,2 +1,5 @@
-entrants,ranking
-"{1,2}","{2,1}"
+name,type,max_rating,entrants,ranking
+DRaaS & RouteSim [Fall 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+RC3 (Under 1200),,1200,"{1,2}","{2,1}"
+RC3 (Under 1400),,1400,"{1,2}","{2,1}"
+RC3 (Open),ROUND_ROBIN,,"{1,2}","{2,1}"

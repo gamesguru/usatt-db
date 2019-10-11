@@ -15,4 +15,4 @@
 
 -- Tournaments -- 
 \! echo '[Tournaments]';
-\copy players.tournaments (entrants, ranking) FROM './data/tournaments.csv' WITH (FORMAT csv, HEADER);
+\copy players.tournaments (name, type, max_rating, entrants, ranking) FROM './data/tournaments.csv' WITH (FORMAT csv, HEADER);

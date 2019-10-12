@@ -1,7 +1,9 @@
 -- Run from parent directory, e.g. `../`
 
-\! echo '\nBEGIN: [startup.sql]';
+\! echo '\nBEGIN: [rebuild.sql]';
+
+DROP SCHEMA players CASCADE;
 
 \i ./sql/players.sql
 -- \i ./sql/functions.sql
-\i ./sql/__import.sql
+\i ./sql/import.sql

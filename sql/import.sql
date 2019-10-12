@@ -1,5 +1,5 @@
 
-\! echo '\nBEGIN: [__import.sql]';
+\! echo '\nBEGIN: [import.sql]';
 
 -- Users --
 \! echo '[Users]';

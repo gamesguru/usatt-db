@@ -1,5 +1,5 @@
 
-\! echo '\nBEGIN: [__export.sql]';
+\! echo '\nBEGIN: [export.sql]';
 
 -- Players --
 \! echo '[Players]';

@@ -1,4 +1,7 @@
 
+-- init schema
+CREATE SCHEMA players;
+
 -- Main users table
 CREATE TABLE players.users(
     user_id SERIAL PRIMARY KEY,

@@ -3,16 +3,20 @@
 
 -- Users --
 \! echo '[Users]';
-\copy players.users (username, passwd, unverified_email, email, name, starting_rating, gender, height, grip, playing_style, headline) FROM './data/users.csv' WITH (FORMAT csv, HEADER);
+\copy players.users FROM './data/users.csv' WITH csv HEADER;
+SELECT pg_catalog.setval(pg_get_serial_sequence('players.users', 'user_id'), (SELECT MAX(user_id) FROM players.users));
 
 -- Tournaments -- 
 \! echo '[Tournaments]';
-\copy players.tournaments (name, type, max_rating, entrants, ranking) FROM './data/tournaments.csv' WITH (FORMAT csv, HEADER);
+\copy players.tournaments FROM './data/tournaments.csv' WITH csv HEADER;
+SELECT pg_catalog.setval(pg_get_serial_sequence('players.tournaments', 'tournament_id'), (SELECT MAX(tournament_id) FROM players.tournaments));
 
 -- Singles --
 \! echo '[Singles]';
-\copy players.singles_games (reporter_id, player1_id, player2_id, points, score1, score2, timestamp, notes, tournament_id) FROM './data/singles_games.csv' WITH (FORMAT csv, HEADER);
+\copy players.singles_games FROM './data/singles_games.csv' WITH csv HEADER;
+SELECT pg_catalog.setval(pg_get_serial_sequence('players.singles_games', 'game_id'), (SELECT MAX(game_id) FROM players.singles_games));
 
 -- Doubles --
 \! echo '[Doubles]';
-\copy players.doubles_games (reporter_id, player1_id, player2_id, player3_id, player4_id, points, score1, score2, timestamp, notes, tournament_id) FROM './data/doubles_games.csv' WITH (FORMAT csv, HEADER);
+\copy players.doubles_games FROM './data/doubles_games.csv' WITH csv HEADER;
+SELECT pg_catalog.setval(pg_get_serial_sequence('players.doubles_games', 'game_id'), (SELECT MAX(game_id) FROM players.doubles_games));

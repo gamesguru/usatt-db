@@ -1,8 +1,8 @@
-name,type,max_rating,entrants,ranking
-DRaaS & RouteSim [Fall 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
-RC3 [Oct 2019] (Under 1200),DOUBLE_ELIMINATION,1200,"{1,2}","{2,1}"
-RC3 [Oct 2019] (Under 1400),DOUBLE_ELIMINATION,1400,"{1,2}","{2,1}"
-RC3 [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
-RC3 Doubles [Oct 2019] (Under 1200),SINGLE_ELIMINATION,1200,"{1,2}","{2,1}"
-RC3 Doubles [Oct 2019] (Under 1400),SINGLE_ELIMATION,1400,"{1,2}","{2,1}"
-RC3 Doubles [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+tournament_id,name,type,max_rating,entrants,ranking
+1,DRaaS & RouteSim [Fall 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+2,RC3 [Oct 2019] (Under 1200),DOUBLE_ELIMINATION,1200,"{1,2}","{2,1}"
+3,RC3 [Oct 2019] (Under 1400),DOUBLE_ELIMINATION,1400,"{1,2}","{2,1}"
+4,RC3 [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+5,RC3 Doubles [Oct 2019] (Under 1200),SINGLE_ELIMINATION,1200,"{1,2}","{2,1}"
+6,RC3 Doubles [Oct 2019] (Under 1400),SINGLE_ELIMATION,1400,"{1,2}","{2,1}"
+7,RC3 Doubles [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"

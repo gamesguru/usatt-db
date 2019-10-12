@@ -3,5 +3,5 @@
 \! echo '\nBEGIN: [startup.sql]';
 
 \i ./sql/players.sql
--- \i ./onboard/functions.sql
+-- \i ./sql/functions.sql
 \i ./sql/__import.sql

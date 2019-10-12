@@ -43,10 +43,10 @@ CREATE TABLE players.singles_games(
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
     tournament_id INT,
-    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player2_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id)
+    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
 );
 CREATE TABLE players.doubles_games(
     game_id BIGSERIAL PRIMARY KEY,
@@ -61,12 +61,12 @@ CREATE TABLE players.doubles_games(
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
     tournament_id INT,
-    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player1_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player2_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player3_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (player4_id) REFERENCES players.users(user_id),
-    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id)
+    FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player3_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
 );
 
 -- History of ratings

@@ -1,5 +1,8 @@
 name,type,max_rating,entrants,ranking
 DRaaS & RouteSim [Fall 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
-RC3 (Under 1200),,1200,"{1,2}","{2,1}"
-RC3 (Under 1400),,1400,"{1,2}","{2,1}"
-RC3 (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+RC3 [Oct 2019] (Under 1200),DOUBLE_ELIMINATION,1200,"{1,2}","{2,1}"
+RC3 [Oct 2019] (Under 1400),DOUBLE_ELIMINATION,1400,"{1,2}","{2,1}"
+RC3 [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"
+RC3 Doubles [Oct 2019] (Under 1200),SINGLE_ELIMINATION,1200,"{1,2}","{2,1}"
+RC3 Doubles [Oct 2019] (Under 1400),SINGLE_ELIMATION,1400,"{1,2}","{2,1}"
+RC3 Doubles [Oct 2019] (Open),ROUND_ROBIN,,"{1,2}","{2,1}"

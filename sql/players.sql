@@ -42,7 +42,7 @@ CREATE TABLE players.singles_games(
     score2 INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
-    tournament_game BOOLEAN DEFAULT FALSE,
+    tournament_game BOOLEAN,
     tournament_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id),
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id),

@@ -54,10 +54,10 @@ LANGUAGE SQL;
 -- Scratch pad
 --
 --
-game_id,reporter_id,player1_id, player2_id,points,team1_score,timestamp,tournament_game
+game_id,reporter_id,player1_id, player2_id,points,team1_score,timestamp,tournament_id
 
 SELECT
-  sg.game_id,u1.username AS player1,u2.username AS player2,sg.points,sg.team1_score,sg.timestamp,sg.tournament_game
+  sg.game_id,u1.username AS player1,u2.username AS player2,sg.points,sg.team1_score,sg.timestamp,sg.tournament_id
 FROM players.singles_games AS sg
 INNER JOIN players.users AS u1
   ON sg.player1_id=u1.user_id
@@ -68,7 +68,7 @@ WHERE
 
 
 SELECT
-  sg.game_id,u1.username AS player1,u2.username AS player2,sg.tournament_game
+  sg.game_id,u1.username AS player1,u2.username AS player2,sg.tournament_id
 FROM players.singles_games AS sg
 INNER JOIN players.users AS u1
   ON sg.player1_id=u1.user_id

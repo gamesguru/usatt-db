@@ -5,5 +5,5 @@
 DROP SCHEMA players CASCADE;
 
 \i ./sql/players.sql
--- \i ./sql/functions.sql
-\i ./sql/import.sql
+-- \i ./sql/onboard/functions.sql
+\i ./sql/onboard/import.sql

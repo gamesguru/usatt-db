@@ -8,6 +8,8 @@
 -- Tournaments --
 \! echo '[Tournaments]';
 \copy players.tournaments TO './data/tournaments.csv' WITH csv HEADER;
+\copy players.tournament_entrants TO './data/tournament_entrants.csv' WITH csv HEADER;
+
 
 -- Singles --
 \! echo '[Singles]';

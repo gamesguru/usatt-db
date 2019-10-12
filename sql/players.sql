@@ -24,14 +24,20 @@ CREATE TABLE players.users(
     UNIQUE(name)
 );
 
--- Tournament table
+-- Tournament tables
 CREATE TABLE players.tournaments(
     tournament_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     format VARCHAR(80),
     type VARCHAR(80),
-    max_rating INT,
-    entrants INT[]
+    max_rating INT
+);
+CREATE TABLE players.tournament_entrants(
+    tournament_entrant_id BIGSERIAL PRIMARY KEY,
+    tournament_id INT NOT NULL,
+    player_id INT NOT NULL,
+    FOREIGN KEY(player_id) REFERENCES players.users(user_id),
+    FOREIGN KEY(tournament_id) REFERENCES players.tournaments(tournament_id)
 );
 
 -- Main games tables

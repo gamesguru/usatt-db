@@ -36,8 +36,8 @@ CREATE TABLE players.tournament_entrants(
     tournament_entrant_id BIGSERIAL PRIMARY KEY,
     tournament_id INT NOT NULL,
     player_id INT NOT NULL,
-    FOREIGN KEY(player_id) REFERENCES players.users(user_id),
-    FOREIGN KEY(tournament_id) REFERENCES players.tournaments(tournament_id)
+    FOREIGN KEY(player_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY(tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
 );
 
 -- Main games tables

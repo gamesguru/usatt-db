@@ -28,10 +28,10 @@ CREATE TABLE players.users(
 CREATE TABLE players.tournaments(
     tournament_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    format VARCHAR(80),
     type VARCHAR(80),
     max_rating INT,
-    entrants INT[],
-    ranking INT[]
+    entrants INT[]
 );
 
 -- Main games tables

@@ -76,3 +76,9 @@ INNER JOIN players.users AS u2
   ON sg.player2_id=u2.user_id
 WHERE
   sg.tournament_game='true';
+
+
+
+SELECT DISTINCT player1_id FROM players.singles_games WHERE tournament_id=1
+UNION DISTINCT
+SELECT DISTINCT player2_id FROM players.singles_games WHERE tournament_id=1

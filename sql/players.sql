@@ -47,7 +47,7 @@ CREATE TABLE players.singles_games(
     player1_id INT NOT NULL,  -- Winner
     player2_id INT NOT NULL,  -- Loser
     points INT DEFAULT 21,  -- Can also be 11
-    score1 INT DEFAULT 21,  -- Final score of winner
+    score1 INT,  -- Final score of winner
     score2 INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),
@@ -65,7 +65,7 @@ CREATE TABLE players.doubles_games(
     player3_id INT NOT NULL,  -- Team 2
     player4_id INT NOT NULL,  -- Team 2
     points INT DEFAULT 21,  -- Can also be 11
-    score1 INT DEFAULT 21,  -- Final score of winner
+    score1 INT,  -- Final score of winner
     score2 INT,  -- Final score of loser
     timestamp TIMESTAMP DEFAULT NOW(),
     notes VARCHAR(200),

@@ -49,7 +49,7 @@ CREATE TABLE players.singles_games(
     points INT DEFAULT 21,  -- Can also be 11
     score1 INT,  -- Final score of winner
     score2 INT,  -- Final score of loser
-    timestamp TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
     tournament_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
@@ -67,7 +67,7 @@ CREATE TABLE players.doubles_games(
     points INT DEFAULT 21,  -- Can also be 11
     score1 INT,  -- Final score of winner
     score2 INT,  -- Final score of loser
-    timestamp TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
     tournament_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
@@ -84,7 +84,7 @@ CREATE TABLE players.doubles_games(
 --     user_id INT NOT NULL,
 --     game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
 --     rating float NOT NULL,
---     timestamp TIMESTAMP DEFAULT NOW(),
+--     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
 --     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
 --     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
 -- );

@@ -84,3 +84,16 @@ FROM
   players.singles_games
 WHERE
   tournament_id = 1
+
+
+-- Table
+-- History of ratings
+-- CREATE TABLE players.ratings(
+--     rating_id BIGSERIAL PRIMARY KEY,
+--     user_id INT NOT NULL,
+--     game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
+--     rating float NOT NULL,
+--     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
+--     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
+--     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
+-- );

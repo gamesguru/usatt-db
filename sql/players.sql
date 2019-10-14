@@ -28,9 +28,12 @@ CREATE TABLE players.users(
 CREATE TABLE players.tournaments(
     tournament_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    tag VARCHAR(120),
     format VARCHAR(80),
     type VARCHAR(80),
-    max_rating INT
+    max_rating INT,
+    UNIQUE(name),
+    UNIQUE(tag)
 );
 CREATE TABLE players.tournament_entrants(
     tournament_entrant_id BIGSERIAL PRIMARY KEY,
@@ -77,14 +80,3 @@ CREATE TABLE players.doubles_games(
     FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
 );
-
--- History of ratings
--- CREATE TABLE players.ratings(
---     rating_id BIGSERIAL PRIMARY KEY,
---     user_id INT NOT NULL,
---     game_id BIGINT NOT NULL,  -- Each rating is associated to a new game
---     rating float NOT NULL,
---     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
---     FOREIGN KEY (user_id) REFERENCES players.users(user_id),
---     FOREIGN KEY (game_id) REFERENCES players.games(game_id)
--- );

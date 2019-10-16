@@ -1,4 +1,4 @@
-tournament_entrant_id,tournament_id,player_id
+circuit_entrant_id,circuit_id,player_id
 1,1,1
 2,1,2
 3,1,3

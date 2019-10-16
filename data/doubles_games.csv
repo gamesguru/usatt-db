@@ -1,4 +1,4 @@
-game_id,reporter_id,player1_id,player2_id,player3_id,player4_id,points,score1,score2,created_at,notes,tournament_id
+game_id,reporter_id,player1_id,player2_id,player3_id,player4_id,points,score1,score2,created_at,notes,circuit_id
 1,1,19,1,6,10,21,,,2019-09-25 00:00:00,,
 2,1,19,1,6,10,21,,,2019-09-25 00:00:00,,
 3,1,6,16,19,1,21,,,2019-09-25 00:00:00,,

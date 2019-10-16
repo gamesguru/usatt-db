@@ -24,9 +24,9 @@ CREATE TABLE players.users(
     UNIQUE(name)
 );
 
--- Tournament tables
-CREATE TABLE players.tournaments(
-    tournament_id SERIAL PRIMARY KEY,
+-- Circuit event tables
+CREATE TABLE players.circuits(
+    circuit_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     tag VARCHAR(120),
     format VARCHAR(80),
@@ -35,12 +35,12 @@ CREATE TABLE players.tournaments(
     UNIQUE(name),
     UNIQUE(tag)
 );
-CREATE TABLE players.tournament_entrants(
-    tournament_entrant_id BIGSERIAL PRIMARY KEY,
-    tournament_id INT NOT NULL,
+CREATE TABLE players.circuit_entrants(
+    circuit_entrant_id BIGSERIAL PRIMARY KEY,
+    circuit_id INT NOT NULL,
     player_id INT NOT NULL,
     FOREIGN KEY(player_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY(tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
+    FOREIGN KEY(circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
 
 -- Main games tables
@@ -54,11 +54,11 @@ CREATE TABLE players.singles_games(
     score2 INT,  -- Final score of loser
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
-    tournament_id INT,
+    circuit_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
 CREATE TABLE players.doubles_games(
     game_id BIGSERIAL PRIMARY KEY,
@@ -72,11 +72,11 @@ CREATE TABLE players.doubles_games(
     score2 INT,  -- Final score of loser
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
-    tournament_id INT,
+    circuit_id INT,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player3_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (tournament_id) REFERENCES players.tournaments(tournament_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );

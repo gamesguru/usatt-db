@@ -1,4 +1,4 @@
-tournament_id,name,tag,format,type,max_rating
+circuit_id,name,tag,format,type,max_rating
 1,DRaaS & RouteSim [Fall 2019] (Open),Draas-Sim@2019-09,ROUND_ROBIN,SINGLES,
 2,RC3 [Oct 2019] (Under 1200),RC3-1200@2019-10,DOUBLE_ELIMINATION,SINGLES,1200
 3,RC3 [Oct 2019] (Under 1400),RC3-1400@2019-10,DOUBLE_ELIMINATION,SINGLES,1400

@@ -25,22 +25,23 @@ CREATE TABLE players.users(
 );
 
 -- Circuit event tables
-CREATE TABLE players.circuits(
+CREATE TABLE players.circuit(
     circuit_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     tag VARCHAR(120),
+    created_at VARCHAR(80),
+    max_rating INT,
     format VARCHAR(80),
     type VARCHAR(80),
-    max_rating INT,
-    UNIQUE(name),
-    UNIQUE(tag)
+    class VARCHAR(80),
+    UNIQUE(tag, created_at)
 );
 CREATE TABLE players.circuit_entrants(
     circuit_entrant_id BIGSERIAL PRIMARY KEY,
     circuit_id INT NOT NULL,
     player_id INT NOT NULL,
     FOREIGN KEY(player_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY(circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY(circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );
 
 -- Main games tables
@@ -58,7 +59,7 @@ CREATE TABLE players.singles_games(
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );
 CREATE TABLE players.doubles_games(
     game_id BIGSERIAL PRIMARY KEY,
@@ -78,5 +79,5 @@ CREATE TABLE players.doubles_games(
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player3_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );

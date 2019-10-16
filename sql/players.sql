@@ -2,6 +2,20 @@
 -- init schema
 CREATE SCHEMA players;
 
+
+
+-- Circuit event tables
+CREATE TABLE players.circuit(
+    circuit_id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    tag VARCHAR(120),
+    created_at VARCHAR(80),
+    max_rating INT,
+    format VARCHAR(80),
+    type VARCHAR(80),
+    class VARCHAR(80),
+    UNIQUE(tag, created_at)
+);
 -- Main users table
 CREATE TABLE players.users(
     user_id SERIAL PRIMARY KEY,
@@ -18,24 +32,14 @@ CREATE TABLE players.users(
     grip VARCHAR(20) DEFAULT 'SHAKE_HAND',
     playing_style VARCHAR(200),
     headline VARCHAR(200),
+    default_circuit_id INT,
     UNIQUE(username),
     UNIQUE(email),
     UNIQUE(unverified_email),
-    UNIQUE(name)
+    UNIQUE(name),
+    FOREIGN KEY(default_circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );
-
--- Circuit event tables
-CREATE TABLE players.circuit(
-    circuit_id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    tag VARCHAR(120),
-    created_at VARCHAR(80),
-    max_rating INT,
-    format VARCHAR(80),
-    type VARCHAR(80),
-    class VARCHAR(80),
-    UNIQUE(tag, created_at)
-);
+-- Circuit entrants
 CREATE TABLE players.circuit_entrants(
     circuit_entrant_id BIGSERIAL PRIMARY KEY,
     circuit_id INT NOT NULL,
@@ -44,7 +48,9 @@ CREATE TABLE players.circuit_entrants(
     FOREIGN KEY(circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );
 
--- Main games tables
+
+
+-- Singles games
 CREATE TABLE players.singles_games(
     game_id BIGSERIAL PRIMARY KEY,
     reporter_id INT NOT NULL,
@@ -55,12 +61,13 @@ CREATE TABLE players.singles_games(
     score2 INT,  -- Final score of loser
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
-    circuit_id INT,
+    circuit_id INT NOT NULL,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
 );
+-- Doubles games
 CREATE TABLE players.doubles_games(
     game_id BIGSERIAL PRIMARY KEY,
     reporter_id INT NOT NULL,
@@ -73,7 +80,7 @@ CREATE TABLE players.doubles_games(
     score2 INT,  -- Final score of loser
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
-    circuit_id INT,
+    circuit_id INT NOT NULL,
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,

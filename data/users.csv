@@ -1,36 +1,36 @@
-user_id,username,passwd,unverified_email,email,email_token_activate,email_token_pw_reset,name,starting_rating,gender,height,grip,playing_style,headline
-1,sjaroch,$2b$10$WkKnDoASwU7c6.MyALj.3.ujoY0vkQ6OQ3G7U5eFRKLXOeVqgbKC2,,mathmuncher11@gmail.com,,,Shane Jaroch,1200,Male,180,SHAKE_HAND,,
-2,rramac21,,rramac21@ford.com,,,,Raja Ramachandran,1300,Male,,SHAKE_HAND,,
-3,yhu60,,yhu60@ford.com,,,,Yuhai Hu,1600,Male,,PEN_HOLE,,RC3
-4,hseada,,hseada@ford.com,,,,Haitham Seada,1400,Male,,SHAKE_HAND,,
-5,pmathai,,pmathai@ford.com,,,,Pramod Mathai,1350,Male,,SHAKE_HAND,,
-6,choope20,,choope20@ford.com,,,,Chris Hooper,1300,Male,,SHAKE_HAND,,
-7,tmechine,,tmechine@ford.com,,,,Tharun Mechineni,1300,Male,,SHAKE_HAND,,
-8,rarora13,,rarora13@ford.com,,,,Rohan Arora,1300,Male,,SHAKE_HAND,,
-9,ychen310,,ychen310@ford.com,,,,Rick Chen,1300,Male,,SHAKE_HAND,,
-10,vbagdass,,vbagdass@ford.com,,,,Vadim Bagdass,1250,Male,,SHAKE_HAND,,
-11,rdollete,,rdollete@ford.com,,,,Ron Dollete,1250,Male,,SHAKE_HAND,,
-12,sdeshmu2,,sdeshmu2@ford.com,,,,Shantanu Deshmukh,1200,Male,,SHAKE_HAND,,
-13,agrewal6,,agrewal6@ford.com,,,,Amrinder Grewal,1200,Male,,SHAKE_HAND,,
-14,aahir,,aahir@ford.com,,,,Aseem Ahir,1200,Male,,SHAKE_HAND,,
-15,achintar,,achintar@ford.com,,,,Avinash Chintareddy,1200,Male,,SHAKE_HAND,,
-16,dvasamse,,dvasamse@ford.com,,,,Devi Vasamsetti,1200,Male,,SHAKE_HAND,,
-17,gpeter86,,gpeter86@ford.com,,,,Grant Peterson,1200,Male,,SHAKE_HAND,,
-18,gnurushe,,gnurushe@ford.com,,,,Gregory Nurushev,1200,Male,,SHAKE_HAND,,
-19,hmiriyam,,hmiriyam@ford.com,,,,Hari Prasad Miriyam,1200,Male,,SHAKE_HAND,,
-20,hpark3,,hpark3@ford.com,,,,Hyongju Park,1200,Male,,SHAKE_HAND,,
-21,kkesmia,,kkesmia@ford.com,,,,Khaled Kesmia,1200,Male,,SHAKE_HAND,,
-22,mmamun,,mmamun@ford.com,,,,Md Sha Al Mamun,1200,Male,,SHAKE_HAND,,
-23,tsingh6,,tsingh6@ford.com,,,,Taj Singh,1200,Male,,SHAKE_HAND,,
-24,adejans,,adejans@ford.com,,,,Adam Dejans,1200,Male,,PEN_HOLE,,intimidation tactics
-25,pharan,,pharan@ford.com,,,,Prithvi Haran,1200,Male,,SHAKE_HAND,,
-26,hji9,,hji9@ford.com,,,,Haochen Ji,1200,Male,,SHAKE_HAND,,
-27,jlyon11,,jlyon11@ford.com,,,,Joshua Lyon,1200,Male,,SHAKE_HAND,,
-28,bicabone,,bicabone@ford.com,,,,Blake Icabone,1200,Male,,SHAKE_HAND,,
-29,achinta1,,achinta1@ford.com,,,,Anil Chintala,1200,Male,,SHAKE_HAND,,
-30,gabhinav,,gabhinav@ford.com,,,,Avi (Guar) Abhinav,1200,Male,,SHAKE_HAND,,
-31,bwang55,,bwang55@ford.com,,,,Bo Wang,1200,Male,,SHAKE_HAND,,
-32,awhiten1,,awhiten1@ford.com,,,,Adam Whitener,1200,Male,,SHAKE_HAND,,
-33,eruff2,,eruff2@ford.com,,,,Eyal Ruff,1200,Male,,SHAKE_HAND,,Spinny serve
-34,jtimma,,jtimma@ford.com,,,,Jon Timma,1200,Male,,SHAKE_HAND,,
-35,vtalasan,,vtalasan@ford.com,,,,Vishnu Talasani,1200,Male,,SHAKE_HAND,,
+user_id,username,passwd,unverified_email,email,email_token_activate,email_token_pw_reset,name,starting_rating,gender,height,grip,playing_style,headline,default_circuit_id
+1,sjaroch,$2b$10$WkKnDoASwU7c6.MyALj.3.ujoY0vkQ6OQ3G7U5eFRKLXOeVqgbKC2,,mathmuncher11@gmail.com,,,Shane Jaroch,1200,Male,180,SHAKE_HAND,,,5
+2,rramac21,,,,,,Raja Ramachandran,1300,Male,,SHAKE_HAND,,,5
+3,yhu60,,,,,,Yuhai Hu,1600,Male,,PEN_HOLE,,RC3,5
+4,hseada,,,,,,Haitham Seada,1400,Male,,SHAKE_HAND,,,5
+5,pmathai,,,,,,Pramod Mathai,1350,Male,,SHAKE_HAND,,,5
+6,choope20,,,,,,Chris Hooper,1300,Male,,SHAKE_HAND,,,5
+7,tmechine,,,,,,Tharun Mechineni,1300,Male,,SHAKE_HAND,,,5
+8,rarora13,,,,,,Rohan Arora,1300,Male,,SHAKE_HAND,,,5
+9,ychen310,,,,,,Rick Chen,1300,Male,,SHAKE_HAND,,,5
+10,vbagdass,,,,,,Vadim Bagdass,1250,Male,,SHAKE_HAND,,,5
+11,rdollete,,,,,,Ron Dollete,1250,Male,,SHAKE_HAND,,,5
+12,sdeshmu2,,,,,,Shantanu Deshmukh,1200,Male,,SHAKE_HAND,,,5
+13,agrewal6,,,,,,Amrinder Grewal,1200,Male,,SHAKE_HAND,,,5
+14,aahir,,,,,,Aseem Ahir,1200,Male,,SHAKE_HAND,,,5
+15,achintar,,,,,,Avinash Chintareddy,1200,Male,,SHAKE_HAND,,,5
+16,dvasamse,,,,,,Devi Vasamsetti,1200,Male,,SHAKE_HAND,,,5
+17,gpeter86,,,,,,Grant Peterson,1200,Male,,SHAKE_HAND,,,5
+18,gnurushe,,gregorynurushev2013@gmail.com,,,,Gregory Nurushev,1200,Male,,SHAKE_HAND,,,5
+19,hmiriyam,,,,,,Hari Prasad Miriyam,1200,Male,,SHAKE_HAND,,,5
+20,hpark3,,,,,,Hyongju Park,1200,Male,,SHAKE_HAND,,,5
+21,kkesmia,,,,,,Khaled Kesmia,1200,Male,,SHAKE_HAND,,,5
+22,mmamun,,,,,,Md Sha Al Mamun,1200,Male,,SHAKE_HAND,,,5
+23,tsingh6,,,,,,Taj Singh,1200,Male,,SHAKE_HAND,,,5
+24,adejans,,,,,,Adam Dejans,1200,Male,,PEN_HOLE,,intimidation tactics,5
+25,pharan,,,,,,Prithvi Haran,1200,Male,,SHAKE_HAND,,,5
+26,hji9,,,,,,Haochen Ji,1200,Male,,SHAKE_HAND,,,5
+27,jlyon11,,,,,,Joshua Lyon,1200,Male,,SHAKE_HAND,,,5
+28,bicabone,,,,,,Blake Icabone,1200,Male,,SHAKE_HAND,,,5
+29,achinta1,,,,,,Anil Chintala,1200,Male,,SHAKE_HAND,,,5
+30,gabhinav,,,,,,Avi (Guar) Abhinav,1200,Male,,SHAKE_HAND,,,5
+31,bwang55,,,,,,Bo Wang,1200,Male,,SHAKE_HAND,,,5
+32,awhiten1,,,,,,Adam Whitener,1200,Male,,SHAKE_HAND,,,5
+33,eruff2,,,,,,Eyal Ruff,1200,Male,,SHAKE_HAND,,Spinny serve,5
+34,jtimma,,,,,,Jon Timma,1200,Male,,SHAKE_HAND,,,5
+35,vtalasan,,,,,,Vishnu Talasani,1200,Male,,SHAKE_HAND,,,5

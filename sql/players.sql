@@ -8,13 +8,12 @@ CREATE SCHEMA players;
 CREATE TABLE players.circuits(
     circuit_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    tag VARCHAR(120),
     created_at VARCHAR(80),
     max_rating INT,
     format VARCHAR(80),
     type VARCHAR(80),
     class VARCHAR(80),
-    UNIQUE(tag, created_at)
+    UNIQUE(name, created_at)
 );
 -- Main users table
 CREATE TABLE players.users(

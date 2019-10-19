@@ -5,7 +5,7 @@ CREATE SCHEMA players;
 
 
 -- Circuit event tables
-CREATE TABLE players.circuit(
+CREATE TABLE players.circuits(
     circuit_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     tag VARCHAR(120),
@@ -37,7 +37,7 @@ CREATE TABLE players.users(
     UNIQUE(email),
     UNIQUE(unverified_email),
     UNIQUE(name),
-    FOREIGN KEY(default_circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY(default_circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
 -- Circuit entrants
 CREATE TABLE players.circuit_entrants(
@@ -45,7 +45,7 @@ CREATE TABLE players.circuit_entrants(
     circuit_id INT NOT NULL,
     player_id INT NOT NULL,
     FOREIGN KEY(player_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY(circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY(circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
 
 
@@ -65,7 +65,7 @@ CREATE TABLE players.singles_games(
     FOREIGN KEY (reporter_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player1_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
 -- Doubles games
 CREATE TABLE players.doubles_games(
@@ -86,5 +86,5 @@ CREATE TABLE players.doubles_games(
     FOREIGN KEY (player2_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player3_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuit(circuit_id) ON UPDATE CASCADE
+    FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );

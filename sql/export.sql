@@ -1,13 +1,16 @@
 
 \! echo '\nBEGIN: [export.sql]';
 
--- Players --
-\! echo '[Players]';
-\copy players.users TO './data/users.csv' WITH csv HEADER;
 
--- Circuit events --
+
+-- Circuit events
 \! echo '[Circuit events]';
-\copy players.circuit TO './data/circuit.csv' WITH csv HEADER;
+\copy players.circuits TO './data/circuits.csv' WITH csv HEADER;
+-- Users
+\! echo '[Users]';
+\copy players.users TO './data/users.csv' WITH csv HEADER;
+-- Circuit entrants
+\! echo '[Circuit entrants]';
 \copy players.circuit_entrants TO './data/circuit_entrants.csv' WITH csv HEADER;
 
 

@@ -5,36 +5,27 @@ Created on Fri Oct 18 23:13:48 2019
 
 @author: shane
 """
-import requests
-import json
 
 # Two conferences
-smash_bros_usernames = ["pmathai", "tmechine", "rarora13", "sjaroch", "gabhinav", "achintar", "gnurushe", "vtalasan"]
-back_comps_usernames = ["yhu60", "rramac21", "hmiriyam", "choope20", "aahir", "dvasamse", "sdeshmu2", "kkesmia"]
+smash_bros = ['pmathai', 'tmechine', 'rarora13', 'sjaroch', 'gabhinav', 'achintar', 'gnurushe', 'vtalasan']
+back_comps = ['yhu60', 'rramac21', 'hmiriyam', 'choope20', 'aahir', 'dvasamse', 'sdeshmu2', 'kkesmia']
 
-# Get user_ids
-users = {}
-with open('./data/users.csv', 'r') as f:
-    for l in f.readlines()[1:]:
-        l = l.rstrip()
-        user_id = l.split(',')[0]
-        username = l.split(',')[1]
-        users[username] = user_id
+# Create games
+sb_games = []
+for i in range(0, len(smash_bros)):
+    for j in range(i + 1, len(smash_bros)):
+        if i != j:
+            sb_games.append(f'{smash_bros[i].ljust(8)} vs {smash_bros[j]}')
+bc_games = []
+for i in range(0, len(back_comps)):
+    for j in range(i + 1, len(back_comps)):
+        if i != j:
+            bc_games.append(f'{back_comps[i].ljust(8)} vs {back_comps[j]}')
 
-smash_bros_ids = set()
-back_comps_ids = set()
-for u in smash_bros_usernames:
-    smash_bros_ids.add(int(users[u]))
-for u in back_comps_usernames:
-    back_comps_ids.add(int(users[u]))
+print('==> Super Smash bros')
+for g in sb_games:
+    print(g)
 
-smash_bros_ids = sorted(smash_bros_ids)
-back_comps_ids = sorted(back_comps_ids)
-
-# Get current ratings
-rating_url = 'https://usatt-server.herokuapp.com/ratings'
-print(f'GET {rating_url}')
-ratings = json.loads(requests.get(rating_url).text)['data']['singles_ratings']
-
-for p in ratings:
-    print(p)
+print('\n==> Backhanded Compliments')
+for g in bc_games:
+    print(g)

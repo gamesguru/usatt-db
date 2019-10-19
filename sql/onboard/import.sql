@@ -5,17 +5,13 @@
 
 -- Circuit events
 \! echo '[Circuit events]';
-\copy players.circuit FROM './data/circuit.csv' WITH csv HEADER;
+\copy players.circuits FROM './data/circuits.csv' WITH csv HEADER;
 SELECT pg_catalog.setval(pg_get_serial_sequence('players.circuit', 'circuit_id'), (SELECT MAX(circuit_id) FROM players.circuit));
 
 -- Users
 \! echo '[Users]';
 \copy players.users FROM './data/users.csv' WITH csv HEADER;
 SELECT pg_catalog.setval(pg_get_serial_sequence('players.users', 'user_id'), (SELECT MAX(user_id) FROM players.users));
-
--- Circuit entrants
-\copy players.circuit_entrants FROM './data/circuit_entrants.csv' WITH csv HEADER;
-SELECT pg_catalog.setval(pg_get_serial_sequence('players.circuit_entrants', 'circuit_id'), (SELECT MAX(circuit_entrant_id) FROM players.circuit_entrants));
 
 
 

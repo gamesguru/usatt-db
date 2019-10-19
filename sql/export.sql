@@ -9,9 +9,7 @@
 -- Users
 \! echo '[Users]';
 \copy players.users TO './data/users.csv' WITH csv HEADER;
--- Circuit entrants
-\! echo '[Circuit entrants]';
-\copy players.circuit_entrants TO './data/circuit_entrants.csv' WITH csv HEADER;
+
 
 
 -- Singles --

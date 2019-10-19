@@ -22,6 +22,7 @@ for i in range(0, len(back_comps)):
         if i != j:
             bc_games.append(f'{back_comps[i].ljust(8)} vs {back_comps[j]}')
 
+# Print games
 print('==> Super Smash bros')
 for g in sb_games:
     print(g)

@@ -39,14 +39,6 @@ CREATE TABLE players.users(
     UNIQUE(name),
     FOREIGN KEY(default_circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
--- Circuit entrants
-CREATE TABLE players.circuit_entrants(
-    circuit_entrant_id BIGSERIAL PRIMARY KEY,
-    circuit_id INT NOT NULL,
-    player_id INT NOT NULL,
-    FOREIGN KEY(player_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY(circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
-);
 
 
 

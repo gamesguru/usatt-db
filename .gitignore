@@ -4,6 +4,7 @@
 .DS_Store
 *.swp
 *.exe
+android-helio.sh
 
 # Compressed files
 *.zip

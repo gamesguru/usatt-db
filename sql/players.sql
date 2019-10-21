@@ -79,3 +79,14 @@ CREATE TABLE players.doubles_games(
     FOREIGN KEY (player4_id) REFERENCES players.users(user_id) ON UPDATE CASCADE,
     FOREIGN KEY (circuit_id) REFERENCES players.circuits(circuit_id) ON UPDATE CASCADE
 );
+
+
+-- Error reporting table
+CREATE TABLE players.errors(
+    error_id BIGSERIAL PRIMARY KEY,
+    request JSON,
+    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
+    name VARCHAR(200),
+    message VARCHAR(200),
+    stack TEXT
+);

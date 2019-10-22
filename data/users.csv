@@ -16,7 +16,6 @@ user_id,username,passwd,unverified_email,email,email_token_activate,email_token_
 15,achintar,,achintar@ford.com,,,,Avinash Chintareddy,1200,Male,,SHAKE_HAND,,,5
 16,dvasamse,,dvasamse@ford.com,,,,Devi Vasamsetti,1200,Male,,SHAKE_HAND,,,5
 17,gpeter86,,gpeter86@ford.com,,,,Grant Peterson,1200,Male,,SHAKE_HAND,,,5
-18,gnurushe,,gregorynurushev2013@gmail.com,,,,Gregory Nurushev,1200,Male,,SHAKE_HAND,,,5
 19,hmiriyam,,hmiriyam@ford.com,,,,Hari Prasad Miriyam,1200,Male,,SHAKE_HAND,,,5
 20,hpark3,,hpark3@ford.com,,,,Hyongju Park,1200,Male,,SHAKE_HAND,,,5
 21,kkesmia,,kkesmia@ford.com,,,,Khaled Kesmia,1200,Male,,SHAKE_HAND,,,5
@@ -34,3 +33,4 @@ user_id,username,passwd,unverified_email,email,email_token_activate,email_token_
 33,eruff2,,eruff2@ford.com,,,,Eyal Ruff,1200,Male,,SHAKE_HAND,,Spinny serve,5
 34,jtimma,,jtimma@ford.com,,,,Jon Timma,1200,Male,,SHAKE_HAND,,,5
 35,vtalasan,,vtalasan@ford.com,,,,Vishnu Talasani,1200,Male,,SHAKE_HAND,,,5
+18,gnurushe,,gregorynurushev2013@gmail.com,,32b4874d-1f50-457e-ae12-e481f60d03d3,,Gregory Nurushev,1200,Male,,SHAKE_HAND,,,5

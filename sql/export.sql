@@ -6,6 +6,7 @@
 -- Circuit events
 \! echo '[Circuit events]';
 \copy players.circuits TO './data/circuits.csv' WITH csv HEADER;
+
 -- Users
 \! echo '[Users]';
 \copy players.users TO './data/users.csv' WITH csv HEADER;

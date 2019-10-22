@@ -1,2 +1,3 @@
 cron_id,run_date,job_type
 1,2019-10-17,SLACKBOT_RATINGS
+2,2019-10-23,SLACKBOT_RATINGS

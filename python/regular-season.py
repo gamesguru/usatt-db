@@ -7,8 +7,29 @@ Created on Fri Oct 18 23:13:48 2019
 """
 
 # Two conferences
-smash_bros = ['pmathai', 'tmechine', 'rarora13', 'sjaroch', 'gabhinav', 'achintar', 'gnurushe', 'vtalasan']
-back_comps = ['yhu60', 'rramac21', 'hmiriyam', 'choope20', 'aahir', 'dvasamse', 'sdeshmu2', 'kkesmia']
+smash_bros = [
+        'pmathai',
+        'tmechine',
+        'rarora13',
+        'ychen310',
+        'sjaroch',
+        'gabhinav',
+        'adejans',
+        'achintar',
+        'gnurushe',
+        'vtalasan'
+        ]
+back_comps = [
+        'yhu60',
+        'rramac21',
+        'hmiriyam',
+        'choope20',
+        'eruff2',
+        'awhiten1',
+        'aahir',
+        'dvasamse',
+        'sdeshmu2',
+        'kkesmia']
 
 # Create games
 sb_games = []

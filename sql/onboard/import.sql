@@ -25,7 +25,14 @@ SELECT pg_catalog.setval(pg_get_serial_sequence('players.singles_games', 'game_i
 \copy players.doubles_games FROM './data/doubles_games.csv' WITH csv HEADER;
 SELECT pg_catalog.setval(pg_get_serial_sequence('players.doubles_games', 'game_id'), (SELECT MAX(game_id) FROM players.doubles_games));
 
+
+
 -- Errors
 \! echo '[Errors]';
 \copy players.errors FROM './data/errors.csv' WITH csv HEADER;
 SELECT pg_catalog.setval(pg_get_serial_sequence('players.errors', 'error_id'), (SELECT MAX(error_id) FROM players.errors));
+
+-- Cron jobs
+\! echo '[Cron Jobs]';
+\copy players.cron FROM './data/cron.csv' WITH csv HEADER;
+SELECT pg_catalog.setval(pg_get_serial_sequence('players.cron', 'cron_id'), (SELECT MAX(cron_id) FROM players.cron));

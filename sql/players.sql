@@ -90,3 +90,11 @@ CREATE TABLE players.errors(
     message VARCHAR(200),
     stack TEXT
 );
+
+
+-- Cron Job table
+CREATE TABLE players.cron(
+    cron_id BIGSERIAL PRIMARY KEY,
+    run_date DATE NOT NULL DEFAULT TIMEZONE('UTC', CURRENT_DATE),
+    job_type VARCHAR(80) NOT NULL
+);

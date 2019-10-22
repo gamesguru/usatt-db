@@ -20,6 +20,12 @@
 \! echo '[Doubles]';
 \copy players.doubles_games TO './data/doubles_games.csv' WITH csv HEADER;
 
+
+
 -- Errors
 \! echo '[Errors]';
 \copy players.errors TO './data/errors.csv' WITH csv HEADER;
+
+-- Cron jobs
+\! echo '[Cron Jobs]';
+\copy players.cron TO './data/cron.csv' WITH csv HEADER;

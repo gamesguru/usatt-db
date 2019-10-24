@@ -6,7 +6,6 @@ user_id,username,passwd,unverified_email,email,email_token_activate,email_token_
 5,pmathai,,pmathai@ford.com,,,,Pramod Mathai,1350,Male,,SHAKE_HAND,,,5
 6,choope20,,choope20@ford.com,,,,Chris Hooper,1300,Male,,SHAKE_HAND,,,5
 7,tmechine,,tmechine@ford.com,,,,Tharun Mechineni,1300,Male,,SHAKE_HAND,,,5
-8,rarora13,,rarora13@ford.com,,,,Rohan Arora,1300,Male,,SHAKE_HAND,,,5
 9,ychen310,,ychen310@ford.com,,,,Rick Chen,1300,Male,,SHAKE_HAND,,,5
 10,vbagdass,,vbagdass@ford.com,,,,Vadim Bagdass,1250,Male,,SHAKE_HAND,,,5
 11,rdollete,,rdollete@ford.com,,,,Ron Dollete,1250,Male,,SHAKE_HAND,,,5
@@ -34,3 +33,4 @@ user_id,username,passwd,unverified_email,email,email_token_activate,email_token_
 35,vtalasan,,vtalasan@ford.com,,,,Vishnu Talasani,1200,Male,,SHAKE_HAND,,,5
 18,gnurushe,$2b$10$jGKDmpZKFHYS3.xN3Pg9JODgYJhEXLzc1QKq3b1s.0HYCBEyxbY4m,,gregorynurushev2013@gmail.com,,,Gregory Nurushev,1200,Male,,SHAKE_HAND,,,5
 12,sdeshmu2,$2b$10$yj.aIW7VlOawMjs4HajGCOWzFvNnver6BBNfIH4h1O0votrTYJUl6,,sdeshmu2@ford.com,,,Shantanu Deshmukh,1200,Male,,SHAKE_HAND,,,5
+8,rarora13,$2b$10$KcZeLmsE75Ma6LgpW8d8x.NrVNdl5iHfe4e1krr89wcSgamHvYhYG,,rarora13@ford.com,,,Rohan Arora,1300,Male,,SHAKE_HAND,,,5

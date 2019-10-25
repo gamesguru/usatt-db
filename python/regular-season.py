@@ -5,11 +5,14 @@ Created on Fri Oct 18 23:13:48 2019
 
 @author: shane
 """
+import json
 
-meta_info = {
 
-}
+#
+# The league
+#
 
+# First conference
 smash_bros = {
     "name": 'Super Smash Bros',
     "id": 1,
@@ -24,7 +27,9 @@ smash_bros = {
                 'tmechine',
                 'bwang55',
                 'sjaroch',
-            ]
+            ],
+            # Divisional games
+            "games": [],
         },
         {
             "name": 'Raspberry Berets',
@@ -37,11 +42,16 @@ smash_bros = {
                 'gnurushe',
                 'awhiten1',
                 'kkesmia',
-            ]
+            ],
+            # Divisional games
+            "games": [],
         }
-    ]
+    ],
+    # Conference games
+    "games": [],
 }
 
+# Second conference
 back_comps = {
     "name": 'Backhanded Compliments',
     "id": 2,
@@ -49,75 +59,119 @@ back_comps = {
         {
             "name": 'Shadow Dancers',
             "type": 1,
-            "games": [],
             "members": [
-                    'yhu60',
-                    'rramac21',
-                    'hmiriyam',
-                    'choope20',
-                    'ychen310',
-            ]
+                'yhu60',
+                'rramac21',
+                'hmiriyam',
+                'choope20',
+                'ychen310',
+            ],
+            # Divisional games
+            "games": [],
         },
         {
             "name": 'Orange Dots',
             "type": 2,
-            "games": [],
             "members": [
-                    'aahir',
-                    'achintar',
-                    'dvasamse',
-                    'sdeshmu2',
-                    'vtalasan',
-            ]
+                'aahir',
+                'achintar',
+                'dvasamse',
+                'sdeshmu2',
+                'vtalasan',
+            ],
+            # Divisional games
+            "games": [],
         }
-    ]
+    ],
+    # Conference games
+    "games": [],
 }
 
+# Inter-conference games
+games = []
 
+
+#
+# Functions
+#
+
+# Creates games
+def create_games():
+    print('''
+====================
+==> DIVISIONAL GAMES
+====================
+        ''')
+    # Combine the divisions from both conferences
+    divisions = smash_bros["divisions"].copy()
+    divisions.extend(back_comps["divisions"])
+    # Add the games for players inside a division
+    for division in divisions:
+        members = division["members"]
+        print(f'\n--> {division["name"]} ({len(members)} members)')  # Print header
+        # Match up only new pairs
+        for i, m1 in enumerate(members):
+            for j in range(i + 1, len(members)):
+                m2 = members[j]
+                print(f'{m1.ljust(8)} vs. {m2}')  # Print game
+                # Add game
+                division["games"].append({"player1": m1, "player2": m2})
+
+    print('''
+====================
+==> CONFERENCE GAMES
+====================
+    ''')
+    # Add games for players in one division vs. players in another
+    for i, d1 in enumerate(smash_bros["divisions"]):
+        for j in range(i + 1, len(smash_bros["divisions"])):
+            d2 = smash_bros["divisions"][j]
+            print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
+            for x, m1 in enumerate(d1["members"]):
+                for m2 in d2["members"]:
+                    print(f'{m1.ljust(8)} vs. {m2}')  # Print game
+                    smash_bros["games"].append({"player1": m1, "player2": m2})
+    # Same for second conference
+    for i, d1 in enumerate(back_comps["divisions"]):
+        for j in range(i + 1, len(back_comps["divisions"])):
+            d2 = back_comps["divisions"][j]
+            print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
+            for x, m1 in enumerate(d1["members"]):
+                for m2 in d2["members"]:
+                    print(f'{m1.ljust(8)} vs. {m2}')  # Print game
+                    back_comps["games"].append({"player1": m1, "player2": m2})
+
+    print('''
+======================
+==> X-CONFERENCE GAMES
+======================
+    ''')
+    # Add games for players in one conference vs. players in another
+    s_mems = []
+    for d in smash_bros["divisions"]:
+        s_mems.extend(d["members"])
+    b_mems = []
+    for d in back_comps["divisions"]:
+        b_mems.extend(d["members"])
+    for m1 in s_mems:
+        for m2 in b_mems:
+            print(f'{m1.ljust(8)} vs {m2}')
+            games.append({"player1": m1, "player2": m2})
+
+    return games
+
+
+#
+# Main func
+#
 def main():
-    print(
-        f'[Smash Bros] -- Blind Assassins  .. {len(smash_bros["divisions"][0]["members"])} members')
-    print(
-        f'[Smash Bros] -- Raspberry Berets .. {len(smash_bros["divisions"][1]["members"])} members')
-    print(
-        f'[Back Comps] -- Shadow Dancers   .. {len(back_comps["divisions"][0]["members"])} members')
-    print(
-        f'[Back Comps] -- Orange Dots      .. {len(back_comps["divisions"][1]["members"])} members\n')
-
-    # Create games
-    # sb_games = []
-    # for i in range(0, len(league["smash_bros"])):
-    #     for j in range(i + 1, len(league["smash_bros"])):
-    #         if i != j:
-    #             sb_games.append(
-    #                 f'{league["smash_bros"][i].ljust(8)} vs {league["smash_bros"][j]}')
-    # bc_games = []
-    # for i in range(0, len(league["back_comps"])):
-    #     for j in range(i + 1, len(league["back_comps"])):
-    #         if i != j:
-    #             bc_games.append(
-    #                 f'{league["back_comps"][i].ljust(8)} vs {league["back_comps"][j]}')
-    # mix_games = []
-    # for i in range(0, len(league["smash_bros"])):
-    #     for j in range(0, len(league["back_comps"])):
-    #         mix_games.append(
-    #             f'{league["smash_bros"][i].ljust(8)} vs {league["back_comps"][j]}')
-
-    # # Print games
-    # print(f'==> Super Smash bros [3-GAME MATCHES] ({len(sb_games)})')
-    # for g in sb_games:
-    #     print(g)
-
-    # print(f'\n==> Backhanded Compliments [3-GAME MATCHES] ({len(bc_games)})')
-    # for g in bc_games:
-    #     print(g)
-
-    # print(f'\n==> Mixed league [1 GAME DUELS] ({len(mix_games)})')
-    # for g in mix_games:
-    #     print(g)
-
-    # games = sb_games.append(bc_games).append(mix_games)
-    games = []
+    xgames = create_games()
+    games = json.dumps({
+        "smash_bros": smash_bros['games'],
+        "back_comps": back_comps['games'],
+        "xgames": xgames,
+    })
+    # print(games)
     return games
 
 

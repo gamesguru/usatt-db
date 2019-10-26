@@ -18,10 +18,10 @@ CREATE TABLE players.circuits(
 -- Main users table
 CREATE TABLE players.users(
     user_id SERIAL PRIMARY KEY,
-    username CITEXT NOT NULL,  -- Should be user's Ford CDSID
+    username VARCHAR(8) NOT NULL,  -- Should be user's Ford CDSID
     passwd VARCHAR(300),
-    unverified_email CITEXT,
-    email CITEXT,
+    unverified_email VARCHAR(140),
+    email VARCHAR(140),
     email_token_activate VARCHAR(200),
     email_token_pw_reset VARCHAR(200),
     name VARCHAR(90),  -- First Last

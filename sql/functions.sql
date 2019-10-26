@@ -6,7 +6,7 @@
 --
 CREATE
 OR REPLACE FUNCTION players.hsgames() RETURNS TABLE(
-  game_id BIGINT, username1 CITEXT, username2 VARCHAR,
+  game_id BIGINT, username1 VARCHAR, username2 VARCHAR,
   created_at TIMESTAMP, circuit_tag VARCHAR
 ) AS $$
 SELECT
@@ -28,8 +28,8 @@ FROM
 --
 CREATE
 OR REPLACE FUNCTION players.hdgames() RETURNS TABLE(
-  game_id BIGINT, username1 CITEXT, username2 CITEXT,
-  username3 CITEXT, username4 CITEXT,
+  game_id BIGINT, username1 VARCHAR, username2 VARCHAR,
+  username3 VARCHAR, username4 VARCHAR,
   created_at TIMESTAMP, circuit_tag VARCHAR
 ) AS $$
 SELECT

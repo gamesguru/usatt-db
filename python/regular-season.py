@@ -120,11 +120,11 @@ def create_games():
         members = division["members"]
         print(f'\n--> {division["name"]} ({len(members)} members)')  # Print header
         # Match up only new pairs
-        for i, m1 in enumerate(members):
+        for x, m1 in enumerate(members):
             # Create multiples of the same game
-            for i in range(0, NUM_GAMES_DIVISION):
-                for j in range(i + 1, len(members)):
-                    m2 = members[j]
+            for g in range(0, NUM_GAMES_DIVISION):
+                for y in range(x + 1, len(members)):
+                    m2 = members[y]
                     print(f'{m1.ljust(8)} vs. {m2}')  # Print game
                     # Add game
                     game = {"player1": m1, "player2": m2}
@@ -144,7 +144,7 @@ def create_games():
             print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
             for x, m1 in enumerate(d1["members"]):
                 # Create multiples of the same game
-                for i in range(0, NUM_GAMES_CONFERENCE):
+                for g in range(0, NUM_GAMES_CONFERENCE):
                     for m2 in d2["members"]:
                         game = {"player1": m1, "player2": m2}
                         print(f'{m1.ljust(8)} vs. {m2}')  # Print game
@@ -159,7 +159,7 @@ def create_games():
             print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
             for x, m1 in enumerate(d1["members"]):
                 # Create multiples of the same game
-                for i in range(0, NUM_GAMES_CONFERENCE):
+                for g in range(0, NUM_GAMES_CONFERENCE):
                     for m2 in d2["members"]:
                         game = {"player1": m1, "player2": m2}
                         print(f'{m1.ljust(8)} vs. {m2}')  # Print game

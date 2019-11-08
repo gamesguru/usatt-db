@@ -103,13 +103,9 @@ total_games = []
 #
 # Functions
 #
-
-# Creates games
 def create_games():
     print('''
-====================
-==> DIVISIONAL GAMES
-====================
+DIVISIONAL GAMES
         ''')
     # Combine the divisions from both conferences
     divisions = smash_bros["divisions"].copy()
@@ -118,7 +114,7 @@ def create_games():
     # Add the games for players inside a division
     for division in divisions:
         members = division["members"]
-        print(f'\n--> {division["name"]} ({len(members)} members)')  # Print header
+        print('\n' + division["name"])  # Print header
         # Match up only new pairs
         for x, m1 in enumerate(members):
             # Create multiples of the same game
@@ -133,15 +129,13 @@ def create_games():
         print(f'\nTotal: {len(division["games"])} games')
 
     print('''
-====================
-==> CONFERENCE GAMES
-====================
+CONFERENCE GAMES
     ''')
     # Add games for players in one division vs. players in another
     for i, d1 in enumerate(smash_bros["divisions"]):
         for j in range(i + 1, len(smash_bros["divisions"])):
             d2 = smash_bros["divisions"][j]
-            print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
+            print('\n' + d1["name"] + ' vs. ' + d2["name"])  # Print header
             for x, m1 in enumerate(d1["members"]):
                 # Create multiples of the same game
                 for g in range(0, NUM_GAMES_CONFERENCE):
@@ -156,7 +150,7 @@ def create_games():
     for i, d1 in enumerate(back_comps["divisions"]):
         for j in range(i + 1, len(back_comps["divisions"])):
             d2 = back_comps["divisions"][j]
-            print('\n--> ' + d1["name"] + ' vs. ' + d2["name"])  # Print header
+            print('\n' + d1["name"] + ' vs. ' + d2["name"])  # Print header
             for x, m1 in enumerate(d1["members"]):
                 # Create multiples of the same game
                 for g in range(0, NUM_GAMES_CONFERENCE):
@@ -168,9 +162,7 @@ def create_games():
     print(f'\nTotal: {len(back_comps["games"])} games')
 
     print('''
-======================
-==> X-CONFERENCE GAMES
-======================
+X-CONFERENCE GAMES
     ''')
     # Add games for players in one conference vs. players in another
     s_mems = []

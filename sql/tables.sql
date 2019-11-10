@@ -46,6 +46,7 @@ CREATE TABLE players.singles_games (
     points INT DEFAULT 21, -- Can also be 11
     score1 INT, -- Final score of winner
     score2 INT, -- Final score of loser
+    serving_team SMALLINT, -- 1 or 2 depending who serves first
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
     circuit_id INT NOT NULL,
@@ -66,6 +67,7 @@ CREATE TABLE players.doubles_games (
     points INT DEFAULT 21, -- Can also be 11
     score1 INT, -- Final score of winner
     score2 INT, -- Final score of loser
+    serving_team SMALLINT, -- 1 or 2 depending who serves first
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     notes VARCHAR(200),
     circuit_id INT NOT NULL,

@@ -80,11 +80,11 @@ CREATE TABLE players.doubles_games (
 -- Error reporting table
 CREATE TABLE players.errors (
     error_id BIGSERIAL PRIMARY KEY,
-    request JSON,
     created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
     name VARCHAR(200),
     message VARCHAR(200),
-    stack TEXT
+    stack TEXT,
+    request JSON
 );
 
 -- Cron Job table

@@ -3,7 +3,7 @@
 ._*
 .DS_Store
 *.swp
-*.exe
+.env
 .vscode/.ropeproject
 android-helio.sh
 

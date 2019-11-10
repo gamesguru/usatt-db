@@ -24,7 +24,6 @@ CREATE TABLE players.users (
     email_token_pw_reset VARCHAR(200),
     name VARCHAR(90), -- First Last
     precinct VARCHAR(90),
-    starting_rating float DEFAULT 1200,
     gender VARCHAR(20),
     height SMALLINT,
     grip VARCHAR(20) DEFAULT 'SHAKE_HAND',

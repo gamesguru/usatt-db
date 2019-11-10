@@ -1,38 +1,39 @@
-user_id,username,passwd,unverified_email,email,email_token_activate,email_token_pw_reset,name,precinct,starting_rating,gender,height,grip,playing_style,headline,default_circuit_id
-1,sjaroch,$2b$10$WkKnDoASwU7c6.MyALj.3.ujoY0vkQ6OQ3G7U5eFRKLXOeVqgbKC2,,mathmuncher11@gmail.com,,,Shane Jaroch,Ford-RC3,1200,Male,180,SHAKE_HAND,,,5
-2,rramac21,,rara2472009@gmail.com,,,,Raja Ramachandran,Ford-RC3,1300,Male,,SHAKE_HAND,,,5
-3,yhu60,,yhu60@ford.com,,,,Yuhai Hu,Ford-RC3,1600,Male,,PEN_HOLE,,RC3,5
-4,hseada,,hseada@ford.com,,,,Haitham Seada,Ford-RC3,1400,Male,,SHAKE_HAND,,,5
-5,pmathai,,pmathai@ford.com,,,,Pramod Mathai,Ford-RC3,1350,Male,,SHAKE_HAND,,,5
-6,choope20,,choope20@ford.com,,,,Chris Hooper,Ford-RC3,1300,Male,,SHAKE_HAND,,,5
-7,tmechine,,tmechine@ford.com,,,,Tharun Mechineni,Ford-RC3,1300,Male,,SHAKE_HAND,,,5
-9,ychen310,,ychen310@ford.com,,,,Rick Chen,Ford-RC3,1300,Male,,SHAKE_HAND,,,5
-10,vbagdass,,vbagdass@ford.com,,,,Vadim Bagdass,Ford-RC3,1250,Male,,SHAKE_HAND,,,5
-11,rdollete,,rdollete@ford.com,,,,Ron Dollete,Ford-RC3,1250,Male,,SHAKE_HAND,,,5
-13,agrewal6,,agrewal6@ford.com,,,,Amrinder Grewal,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-14,aahir,,aahir@ford.com,,,,Aseem Ahir,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-15,achintar,,achintar@ford.com,,,,Avinash Chintareddy,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-16,dvasamse,,dvasamse@ford.com,,,,Devi Vasamsetti,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-17,gpeter86,,gpeter86@ford.com,,,,Grant Peterson,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-19,hmiriyam,,hmiriyam@ford.com,,,,Hari Prasad Miriyam,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-20,hpark3,,hpark3@ford.com,,,,Hyongju Park,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-21,kkesmia,,kkesmia@ford.com,,,,Khaled Kesmia,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-22,mmamun,,mmamun@ford.com,,,,Md Sha Al Mamun,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-23,tsingh6,,tsingh6@ford.com,,,,Taj Singh,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-24,adejans,,adejans@ford.com,,,,Adam Dejans,Ford-RC3,1200,Male,,PEN_HOLE,,intimidation tactics,5
-25,pharan,,pharan@ford.com,,,,Prithvi Haran,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-26,hji9,,hji9@ford.com,,,,Haochen Ji,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-27,jlyon11,,jlyon11@ford.com,,,,Joshua Lyon,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-28,bicabone,,bicabone@ford.com,,,,Blake Icabone,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-29,achinta1,,achinta1@ford.com,,,,Anil Chintala,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-30,gabhinav,,gabhinav@ford.com,,,,Avi (Guar) Abhinav,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-31,bwang55,,bwang55@ford.com,,,,Bo Wang,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-32,awhiten1,,awhiten1@ford.com,,,,Adam Whitener,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-33,eruff2,,eruff2@ford.com,,,,Eyal Ruff,Ford-RC3,1200,Male,,SHAKE_HAND,,Spinny serve,5
-34,jtimma,,jtimma@ford.com,,,,Jon Timma,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-35,vtalasan,,vtalasan@ford.com,,,,Vishnu Talasani,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-18,gnurushe,$2b$10$jGKDmpZKFHYS3.xN3Pg9JODgYJhEXLzc1QKq3b1s.0HYCBEyxbY4m,,gregorynurushev2013@gmail.com,,,Gregory Nurushev,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-12,sdeshmu2,$2b$10$yj.aIW7VlOawMjs4HajGCOWzFvNnver6BBNfIH4h1O0votrTYJUl6,,sdeshmu2@ford.com,,,Shantanu Deshmukh,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
-8,rarora13,$2b$10$KcZeLmsE75Ma6LgpW8d8x.NrVNdl5iHfe4e1krr89wcSgamHvYhYG,,rarora13@ford.com,,,Rohan Arora,Ford-RC3,1300,Male,,SHAKE_HAND,,,5
-36,hhuang94,,hhuang94@ford.com,,,,Hshing Huang,Ford-RC3,1200,Male,,PEN_HOLE,,,5
-37,vverghe1,,vverghe1@ford.com,,,,Vinay Verghese,Ford-RC3,1200,Male,,SHAKE_HAND,,,5
+user_id,username,passwd,unverified_email,email,email_token_activate,email_token_pw_reset,name,precinct,gender,height,grip,playing_style,headline,default_circuit_id
+1,sjaroch,$2b$10$WkKnDoASwU7c6.MyALj.3.ujoY0vkQ6OQ3G7U5eFRKLXOeVqgbKC2,,mathmuncher11@gmail.com,,,Shane Jaroch,Ford-RC3,Male,180,SHAKE_HAND,,,5
+2,rramac21,,rara2472009@gmail.com,,,,Raja Ramachandran,Ford-RC3,Male,,SHAKE_HAND,,,5
+3,yhu60,,yhu60@ford.com,,,,Yuhai Hu,Ford-RC3,Male,,PEN_HOLE,,RC3,5
+4,hseada,,hseada@ford.com,,,,Haitham Seada,Ford-RC3,Male,,SHAKE_HAND,,,5
+5,pmathai,,pmathai@ford.com,,,,Pramod Mathai,Ford-RC3,Male,,SHAKE_HAND,,,5
+6,choope20,,choope20@ford.com,,,,Chris Hooper,Ford-RC3,Male,,SHAKE_HAND,,,5
+7,tmechine,,tmechine@ford.com,,,,Tharun Mechineni,Ford-RC3,Male,,SHAKE_HAND,,,5
+9,ychen310,,ychen310@ford.com,,,,Rick Chen,Ford-RC3,Male,,SHAKE_HAND,,,5
+10,vbagdass,,vbagdass@ford.com,,,,Vadim Bagdass,Ford-RC3,Male,,SHAKE_HAND,,,5
+11,rdollete,,rdollete@ford.com,,,,Ron Dollete,Ford-RC3,Male,,SHAKE_HAND,,,5
+13,agrewal6,,agrewal6@ford.com,,,,Amrinder Grewal,Ford-RC3,Male,,SHAKE_HAND,,,5
+14,aahir,,aahir@ford.com,,,,Aseem Ahir,Ford-RC3,Male,,SHAKE_HAND,,,5
+15,achintar,,achintar@ford.com,,,,Avinash Chintareddy,Ford-RC3,Male,,SHAKE_HAND,,,5
+16,dvasamse,,dvasamse@ford.com,,,,Devi Vasamsetti,Ford-RC3,Male,,SHAKE_HAND,,,5
+17,gpeter86,,gpeter86@ford.com,,,,Grant Peterson,Ford-RC3,Male,,SHAKE_HAND,,,5
+19,hmiriyam,,hmiriyam@ford.com,,,,Hari Prasad Miriyam,Ford-RC3,Male,,SHAKE_HAND,,,5
+20,hpark3,,hpark3@ford.com,,,,Hyongju Park,Ford-RC3,Male,,SHAKE_HAND,,,5
+21,kkesmia,,kkesmia@ford.com,,,,Khaled Kesmia,Ford-RC3,Male,,SHAKE_HAND,,,5
+22,mmamun,,mmamun@ford.com,,,,Md Sha Al Mamun,Ford-RC3,Male,,SHAKE_HAND,,,5
+23,tsingh6,,tsingh6@ford.com,,,,Taj Singh,Ford-RC3,Male,,SHAKE_HAND,,,5
+24,adejans,,adejans@ford.com,,,,Adam Dejans,Ford-RC3,Male,,PEN_HOLE,,intimidation tactics,5
+25,pharan,,pharan@ford.com,,,,Prithvi Haran,Ford-RC3,Male,,SHAKE_HAND,,,5
+26,hji9,,hji9@ford.com,,,,Haochen Ji,Ford-RC3,Male,,SHAKE_HAND,,,5
+27,jlyon11,,jlyon11@ford.com,,,,Joshua Lyon,Ford-RC3,Male,,SHAKE_HAND,,,5
+28,bicabone,,bicabone@ford.com,,,,Blake Icabone,Ford-RC3,Male,,SHAKE_HAND,,,5
+29,achinta1,,achinta1@ford.com,,,,Anil Chintala,Ford-RC3,Male,,SHAKE_HAND,,,5
+30,gabhinav,,gabhinav@ford.com,,,,Avi (Guar) Abhinav,Ford-RC3,Male,,SHAKE_HAND,,,5
+31,bwang55,,bwang55@ford.com,,,,Bo Wang,Ford-RC3,Male,,SHAKE_HAND,,,5
+32,awhiten1,,awhiten1@ford.com,,,,Adam Whitener,Ford-RC3,Male,,SHAKE_HAND,,,5
+33,eruff2,,eruff2@ford.com,,,,Eyal Ruff,Ford-RC3,Male,,SHAKE_HAND,,Spinny serve,5
+34,jtimma,,jtimma@ford.com,,,,Jon Timma,Ford-RC3,Male,,SHAKE_HAND,,,5
+35,vtalasan,,vtalasan@ford.com,,,,Vishnu Talasani,Ford-RC3,Male,,SHAKE_HAND,,,5
+18,gnurushe,$2b$10$jGKDmpZKFHYS3.xN3Pg9JODgYJhEXLzc1QKq3b1s.0HYCBEyxbY4m,,gregorynurushev2013@gmail.com,,,Gregory Nurushev,Ford-RC3,Male,,SHAKE_HAND,,,5
+12,sdeshmu2,$2b$10$yj.aIW7VlOawMjs4HajGCOWzFvNnver6BBNfIH4h1O0votrTYJUl6,,sdeshmu2@ford.com,,,Shantanu Deshmukh,Ford-RC3,Male,,SHAKE_HAND,,,5
+8,rarora13,$2b$10$KcZeLmsE75Ma6LgpW8d8x.NrVNdl5iHfe4e1krr89wcSgamHvYhYG,,rarora13@ford.com,,,Rohan Arora,Ford-RC3,Male,,SHAKE_HAND,,,5
+36,hhuang94,,hhuang94@ford.com,,,,Hshing Huang,Ford-RC3,Male,,PEN_HOLE,,,5
+37,vverghe1,,vverghe1@ford.com,,,,Vinay Verghese,Ford-RC3,Male,,SHAKE_HAND,,,5
+38,lgeddi,,lgeddi@ford.com,,,,Lava Geddi,Ford-RC3,Male,,SHAKE_HAND,,,5

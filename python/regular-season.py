@@ -121,7 +121,7 @@ DIVISIONAL GAMES
             for g in range(0, NUM_GAMES_DIVISION):
                 for y in range(x + 1, len(members)):
                     m2 = members[y]
-                    print(f'{m1.ljust(8)} vs. {m2}')  # Print game
+                    print(f'@{m1.ljust(8)} vs. @{m2}')  # Print game
                     # Add game
                     game = {"player1": m1, "player2": m2}
                     division["games"].append(game)

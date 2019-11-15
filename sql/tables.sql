@@ -10,6 +10,7 @@ CREATE TABLE players.circuits (
     format VARCHAR(80),
     type VARCHAR(80),
     class VARCHAR(80),
+    active BOOLEAN,
     UNIQUE (name, created_at)
 );
 

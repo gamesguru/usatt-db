@@ -7,8 +7,9 @@
 
 :; # -- BASH -- #
 :; sudo chown -R $LOGNAME:$LOGNAME /var/run/postgresql
-:; pg_ctl initdb -D $PSQL_USATT_LOCAL_DB_DIR -l $PSQL_USATT_LOCAL_DB_DIR/postgreslogfile
-:; pg_ctl -D $PSQL_USATT_LOCAL_DB_DIR -l $PSQL_USATT_LOCAL_DB_DIR/postgreslogfile start
+:; . ./dotenv.sh
+:; pg_ctl initdb -D $PSQL_USATT_LOCAL_DB_DIR -l $PSQL_USATT_LOCAL_DB_DIR/postgreslogfile || true
+:; pg_ctl -D $PSQL_USATT_LOCAL_DB_DIR -l $PSQL_USATT_LOCAL_DB_DIR/postgreslogfile start || true
 :; psql postgresql://$LOGNAME@localhost:5432/usatt
 :; exit
 

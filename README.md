@@ -27,3 +27,7 @@ This will run the `players.sql` script among others, and create the main tables 
 - To use the `python/legacy2csv.py` script, clone the `usatt-legacy` repo into the same folder as this one and rename it to `legacy`.  Run it from the root directory of this repo.
 
 - See the `usatt-server` repo for environment variables that must be set for everything to work.
+
+## Database design
+
+![db](docs/usatt.svg)

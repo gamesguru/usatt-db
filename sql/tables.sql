@@ -1,100 +1,90 @@
 -- init schema
 CREATE SCHEMA players;
-
--- Circuit event tables
+------------------
+-- Precincts
+------------------
+CREATE TABLE players.precincts (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(90) NOT NULL,
+  slack_channel_id VARCHAR(90)
+);
+------------------
+-- Circuits
+------------------
 CREATE TABLE players.circuits (
-    circuit_id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    created_at VARCHAR(80),
-    max_rating INT,
-    format VARCHAR(80),
-    type VARCHAR(80),
-    class VARCHAR(80),
-    active BOOLEAN,
-    UNIQUE (name, created_at)
+  id SERIAL PRIMARY KEY,
+  precinct_id INT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  format VARCHAR(80) NOT NULL,
+  type VARCHAR(80) NOT NULL,
+  class VARCHAR(80) NOT NULL,
+  active BOOLEAN NOT NULL,
+  max_rating float DEFAULT -1,
+  UNIQUE (name, created_at),
+  FOREIGN KEY (precinct_id) REFERENCES players.precincts (id) ON UPDATE CASCADE
 );
-
--- Main users table
+------------------
+-- Users
+------------------
 CREATE TABLE players.users (
-    user_id SERIAL PRIMARY KEY,
-    username VARCHAR(8) NOT NULL, -- Should be user's Ford CDSID
-    passwd VARCHAR(300),
-    unverified_email VARCHAR(140),
-    email VARCHAR(140),
-    email_token_activate VARCHAR(200),
-    email_token_pw_reset VARCHAR(200),
-    name VARCHAR(90), -- First Last
-    precinct VARCHAR(90),
-    active BOOLEAN DEFAULT TRUE,
-    gender VARCHAR(20),
-    height SMALLINT,
-    grip VARCHAR(20) DEFAULT 'SHAKE_HAND',
-    playing_style VARCHAR(200),
-    headline VARCHAR(200),
-    default_circuit_id INT,
-    UNIQUE (username),
-    UNIQUE (email),
-    UNIQUE (unverified_email),
-    UNIQUE (name),
-    FOREIGN KEY (default_circuit_id) REFERENCES players.circuits (circuit_id) ON UPDATE CASCADE
+  id SERIAL PRIMARY KEY,
+  precinct_id INT NOT NULL,
+  default_circuit_id INT NOT NULL,
+  -- Should be user's Ford CDSID
+  username VARCHAR(8) NOT NULL,
+  passwd VARCHAR(300),
+  unverified_email VARCHAR(140),
+  email VARCHAR(140),
+  email_token_activate VARCHAR(200),
+  email_token_pw_reset VARCHAR(200),
+  name VARCHAR(200),
+  grip_preferred VARCHAR(20) DEFAULT 'SHAKE_HAND',
+  headline VARCHAR(200),
+  -- TODO: deprecate this
+  active BOOLEAN DEFAULT TRUE,
+  UNIQUE (username),
+  UNIQUE (email),
+  UNIQUE (unverified_email),
+  FOREIGN KEY (precinct_id) REFERENCES players.precincts (id) ON UPDATE CASCADE,
+  FOREIGN KEY (default_circuit_id) REFERENCES players.circuits (id) ON UPDATE CASCADE
 );
-
--- Singles games
-CREATE TABLE players.singles_games (
-    game_id BIGSERIAL PRIMARY KEY,
-    reporter_id INT NOT NULL,
-    player1_id INT NOT NULL, -- Winner
-    player2_id INT NOT NULL, -- Loser
-    points INT DEFAULT 21, -- Can also be 11
-    score1 INT, -- Final score of winner
-    score2 INT, -- Final score of loser
-    serving_team SMALLINT, -- 1 or 2 depending who serves first
-    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
-    notes VARCHAR(200),
-    circuit_id INT NOT NULL,
-    FOREIGN KEY (reporter_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player1_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player2_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuits (circuit_id) ON UPDATE CASCADE
+------------------
+-- Games
+------------------
+CREATE TABLE players.games (
+  id BIGSERIAL PRIMARY KEY,
+  circuit_id INT NOT NULL,
+  reporter_id INT NOT NULL,
+  player1_id INT NOT NULL,
+  player2_id INT NOT NULL,
+  player3_id INT,
+  player4_id INT,
+  player5_id INT,
+  player6_id INT,
+  created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
+  points_to_win INT DEFAULT 21,
+  final_tally VARCHAR(200),
+  notes VARCHAR(200),
+  FOREIGN KEY (circuit_id) REFERENCES players.circuits (id) ON UPDATE CASCADE,
+  FOREIGN KEY (reporter_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player1_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player2_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player3_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player4_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player5_id) REFERENCES players.users (id) ON UPDATE CASCADE,
+  FOREIGN KEY (player6_id) REFERENCES players.users (id) ON UPDATE CASCADE
 );
-
--- Doubles games
-CREATE TABLE players.doubles_games (
-    game_id BIGSERIAL PRIMARY KEY,
-    reporter_id INT NOT NULL,
-    player1_id INT NOT NULL, -- Team 1 (winner)
-    player2_id INT NOT NULL, -- Team 1 (winner)
-    player3_id INT NOT NULL, -- Team 2
-    player4_id INT NOT NULL, -- Team 2
-    points INT DEFAULT 21, -- Can also be 11
-    score1 INT, -- Final score of winner
-    score2 INT, -- Final score of loser
-    serving_team SMALLINT, -- 1 or 2 depending who serves first
-    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
-    notes VARCHAR(200),
-    circuit_id INT NOT NULL,
-    FOREIGN KEY (reporter_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player1_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player2_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player3_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (player4_id) REFERENCES players.users (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (circuit_id) REFERENCES players.circuits (circuit_id) ON UPDATE CASCADE
-);
-
--- Error reporting table
+------------------
+-- Prod Errors
+------------------
 CREATE TABLE players.errors (
-    error_id BIGSERIAL PRIMARY KEY,
-    created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
-    name VARCHAR(200),
-    message VARCHAR(200),
-    stack TEXT,
-    request JSON
+  id BIGSERIAL PRIMARY KEY,
+  user_id INT,
+  created_at TIMESTAMP DEFAULT TIMEZONE('UTC', NOW()),
+  exception_name VARCHAR(200),
+  message VARCHAR(200),
+  stack TEXT,
+  request JSON,
+  FOREIGN KEY (user_id) REFERENCES players.users (id) ON UPDATE CASCADE
 );
-
--- Cron Job table
-CREATE TABLE players.cron (
-    cron_id BIGSERIAL PRIMARY KEY,
-    run_date DATE NOT NULL DEFAULT TIMEZONE('UTC', CURRENT_DATE),
-    job_type VARCHAR(80) NOT NULL
-);
-

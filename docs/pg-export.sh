@@ -12,6 +12,4 @@ dot -Tps $db.dot -o $db.eps
 
 # Move up and convert to SVG
 convert -flatten $db.eps $db.svg
-rm $db.eps
 mv $db.svg ..
-

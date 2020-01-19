@@ -10,6 +10,7 @@
 :; source .env
 :; pg_ctl initdb -D $PSQL_LOCAL_DB_DIR -l $PSQL_LOCAL_DB_DIR/postgreslogfile || true
 :; pg_ctl -D $PSQL_LOCAL_DB_DIR -l $PSQL_LOCAL_DB_DIR/postgreslogfile start || true
+:; psql -c "CREATE DATABASE usatt;" postgresql://$LOGNAME@localhost:5432/postgres
 :; psql -c "ALTER ROLE ${LOGNAME} SET search_path TO players;" postgresql://$LOGNAME@localhost:5432/usatt
 :; psql postgresql://$LOGNAME@localhost:5432/usatt
 :; exit
